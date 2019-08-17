@@ -1,0 +1,36 @@
+// fonts
+@mixin helvetica {
+  font-family: 'HelveticaNeueCyr';
+}
+
+@mixin avant {
+  font-family: 'AvantGardeCTT';
+}
+
+// brakepoints
+@mixin fromDesktop {
+  @media screen and (min-width: 1025px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+// other
+@mixin hover {
+  @include fromDesktop {
+    &:hover {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{% extends 'templates/page.twig' %}
+{% block title %}Разводящая{% endblock %}
+{% block page %}
+	{% set pagesList = {
+		item0: 'main'
+	} %}
+	<div class="container">
+		<ul>
+			{% for item in pagesList %}
+				<li>
+					<a href="{{item}}.html">{{item}}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}

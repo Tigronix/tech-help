@@ -1,0 +1,72 @@
+{% set asideList = {
+	asideItem0: {
+		headerImg: 'timing-belt',
+    headerTxt: 'Выездная техпомощь',
+    checkboxList: {
+    item0: {desc: 'Замена аккумулятора', checked: true},
+    item1: {desc: 'Слив топлива'},
+    item2: {desc: 'Вскрытие автомобиля'},
+    item3: {desc: 'Откручивание болтов'},
+    item4: {desc: 'Подвоз топлива'},
+    item5: {desc: 'Прикурить автомобиль'},
+    }
+	},
+	asideItem1: {
+		headerImg: 'battery',
+    headerTxt: 'Выездной автоэлектрик',
+    checkboxList: {
+    item0: {desc: 'Замена генератора'},
+    item1: {desc: 'Замена ремня водяного насоса'},
+    item2: {desc: 'Замена гидроусилителя'},
+    item3: {desc: 'Замена датчика температуры'},
+    item4: {desc: 'Замена троса сцепления'},
+    item5: {desc: 'Замена гидроусилителя'},
+    item6: {desc: 'Слив топлива'},
+    item7: {desc: 'Вскрытие автомобиля'},
+    item8: {desc: 'Откручивание болтов'},
+    item9: {desc: 'Подвоз топлива'},
+    item10: {desc: 'Прикурить автомобиль'},
+    }
+	},
+	asideItem2: {
+		headerImg: 'suspension',
+    headerTxt: 'Мобильный шиномонтаж',
+    checkboxList: {
+    item0: {desc: 'Заблокировался замок зажигания'},
+    item1: {desc: 'Отключение иммобилайзера'},
+    item2: {desc: 'Поиск утечек тока в автомобиле'},
+    item3: {desc: 'Отключение сигнализации'},
+    item4: {desc: 'Компьютерная диагностика'},
+    item5: {desc: 'Замена предохранителей'},
+    item6: {desc: 'Замена гидроусилителя'},
+    item7: {desc: 'Замена датчика температуры'},
+    item8: {desc: 'Замена троса сцепления'},
+    }
+	},
+} %}
+
+<aside class="aside">
+	<ul class="aside__list">
+		{% for item in asideList %}
+			<li class="aside__li">
+				<div class="aside__item">
+					<div class="aside__header">
+						<img src="assets/img/icons/{{item.headerImg}}.png" alt="" class="aside__header-img">
+						<div class="aside__header-txt">{{item.headerTxt}}</div>
+					</div>
+					<div class="aside__content">
+						<ul class="aside__checkbox-list">
+							{% for item in item.checkboxList %}
+								<li class="aside__checkbox-li">
+									<div class="aside__checkbox-item">
+										{% include 'checkbox.twig' %}
+									</div>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+</aside>

@@ -1,0 +1,35 @@
+.navigation {
+  width: 43.22vw;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    // margin: -0.52vw -4.68vw;
+  }
+
+  &__li {
+    // padding: 0.52vw 4.68vw;
+  }
+
+  &__link {
+    font-size: 0.93vw;
+    line-height: 0.93vw;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #333;
+  }
+
+  &__icon {
+    width: 1.04vw;
+    height: 1.04vw;
+    margin-right: 0.52vw;
+  }
+
+  &__contacts {
+    margin-left: auto;
+  }
+}

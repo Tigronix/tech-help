@@ -1,0 +1,106 @@
+.page-header {
+  background: #FFCC33;
+  box-shadow: 0px 4px 4px rgba(75, 75, 75, 0.25);
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  z-index: 999;
+  margin-bottom: 15px;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+  }
+
+  &__logo-img {
+    width: 7.81vw;
+    margin-right: 0.52vw;
+  }
+
+  &__logo-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__logo-header {
+    @include avant;
+    font-size: 1.77vw;
+    line-height: 2.13vw;
+    font-weight: bold;
+    color: #FF1F00;
+    border-bottom: 1px solid #FF1F00;
+  }
+
+  &__logo-desc {
+    font-size: 0.6770vw;
+    line-height: 0.6770vw;
+    font-weight: 500;
+    color: #333;
+  }
+
+  &__location {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 3.43vw;
+    margin-right: 4.68vw
+  }
+
+  &__location-img {
+    width: 1.04vw;
+    height: 1.04vw;
+    margin-right: 0.46vw;
+  }
+
+  &__location-desc {
+    font-size: 0.93vw;
+    line-height: 0.93vw;
+    border-bottom: 1px dashed #333;
+  }
+
+  &__contacts {
+    margin-left: auto;
+  }
+
+  &__contacts-phone {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 3px;
+  }
+
+  &__contacts-icon {
+    width: 2.08vw;
+    height: 2.08vw;
+    margin-right: 0.93vw;
+  }
+
+  &__phone-txt {
+    @include avant;
+    font-size: 1.6vw;
+    line-height: 1.9vw;
+    font-weight: bold;
+
+    &--start {
+      color: #FF1F00;
+      font-weight: normal;
+    }
+
+    &--end {
+      color: #fff;
+    }
+  }
+
+  &__contacts-desc {
+    font-size:   0.84vw;
+    line-height: 0.84vw;
+  }
+}

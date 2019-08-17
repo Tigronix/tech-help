@@ -1,0 +1,30 @@
+{% set navigationList = {
+	item0: {
+		imageSource: 'policy',
+    txt: 'О КОМПАНИИ'
+	},
+	item1: {
+		imageSource: 'wrench',
+    txt: 'НАШИ УСЛУГИ'
+	},
+	item2: {
+		imageSource: 'credit-card',
+    txt: 'ЦЕНЫ'
+	},
+	item3: {
+		imageSource: 'contact',
+    txt: 'КОНТАКТЫ'
+	}
+} %}
+<nav class="navigation {{mod}}">
+	<ul class="navigation__list">
+		{% for item in navigationList %}
+			<li class="navigation__li">
+				<a href="#" class="navigation__link">
+					<img src="assets/img/icons/{{item.imageSource}}.png" alt="" class="navigation__icon">
+					<span class="navigation__txt">{{item.txt}}</span>
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</nav>

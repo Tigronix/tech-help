@@ -1,0 +1,58 @@
+.aside {
+  $self: &;
+  width: 14.58vw;
+  border-bottom: 1px solid #E6E6E6;
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #FFCC33;
+    border-radius: 0px 20px 0px 0px;
+    padding: 12px 10px;
+    position: relative;
+
+
+
+    #{$self}__li:first-child &:after {
+      display: none;
+    }
+
+    &:after {
+      display: block;
+      content: '';
+      width: 1px;
+      height: 15px;
+      background: #E6E6E6;
+      position: absolute;
+      left: calc(100% - 1px);
+      top: 0px;
+    }
+  }
+
+  &__header-img {
+    width: 1.30vw;
+    height: 1.30vw;
+    margin-right: 0.52vw;
+  }
+
+  &__header-txt {
+    font-size: 0.93vw;
+    line-height: 0.93vw;
+    color: #333;
+  }
+
+  &__content {
+    border: 1px solid #E6E6E6;
+    border-width: 0 1px;
+    padding: 15px 0.58vw;
+  }
+
+  &__checkbox-list {
+    margin: -8px;
+  }
+
+  &__checkbox-li {
+    padding: 8px;
+  }
+}
