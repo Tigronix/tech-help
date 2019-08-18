@@ -1,0 +1,124 @@
+{% set popularCarsList = {
+	item0: {
+		txt: 'Toyota',
+		checked: true
+	},
+	item1: {
+		txt: 'Ford'
+	},
+	item2: {
+		txt: 'Chevrolet'
+	},
+	item3: {
+		txt: 'Nissan'
+	},
+	item4: {
+		txt: 'Hyundai'
+	},
+	item5: {
+		txt: 'KIA'
+	},
+	item6: {
+		txt: 'Mercedes-Benz'
+	},
+	item7: {
+		txt: 'BMW'
+	},
+	item8: {
+		txt: 'Opel'
+	},
+	item9: {
+		txt: 'Mazda'
+	},
+	item10: {
+		txt: 'Acura'
+	},
+	item11: {
+		txt: 'LADA'
+	},
+	item12: {
+		txt: 'Volkswagen'
+	},
+	item13: {
+		txt: 'Citroen'
+	},
+	item14: {
+		txt: 'Volvo'
+	},
+	item15: {
+		txt: 'Skoda'
+	},
+	item16: {
+		txt: 'Hyundai'
+	},
+	item17: {
+		txt: 'Renault'
+	},
+	item18: {
+		txt: 'Land Rover'
+	},
+	item19: {
+		txt: 'Honda'
+	},
+	item20: {
+		txt: 'Datsun'
+	},
+	item21: {
+		txt: 'Mitsubishi'
+	},
+	item22: {
+		txt: 'Audi'
+	},
+	item23: {
+		txt: 'Jeep'
+	},
+	item24: {
+		txt: 'Peugeot'
+	},
+	item25: {
+		txt: 'Daewoo'
+	},
+	item26: {
+		txt: 'SsangYong'
+	},
+	item27: {
+		txt: 'Lexus'
+	},
+	item28: {
+		txt: 'Subaru'
+	},
+	item29: {
+		txt: 'Suzuki'
+	},
+	item30: {
+		txt: 'Infiniti'
+	},
+	item31: {
+		txt: 'Fiat'
+	},
+	item32: {
+		txt: 'SsangYong'
+	},
+	item33: {
+		txt: 'Chery'
+	},
+	item34: {
+		txt: 'Lifan'
+	},
+	item35: {
+		txt: 'Geely'
+	}
+} %}
+
+<section class="popular-cars">
+	<ul class="popular-cars__list">
+		<li class="popular-cars__li">
+			<div class="popular-cars__header">{{header|default('Популярные марки авто:')}}</div>
+		</li>
+		{% for item in popularCarsList %}
+			<li class="popular-cars__li">
+				{% include 'tag.twig' %}
+			</li>
+		{% endfor %}
+	</ul>
+</section>

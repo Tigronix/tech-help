@@ -7,7 +7,8 @@ var qsa = function qsa(sel) {
 	return document.querySelectorAll(sel);
 };
 var APP = {
-	name: 'iBrush HTML Starter'
+	name: 'HTML Starter'
 };
+
 (function () {})();
 //# sourceMappingURL=main.js.map

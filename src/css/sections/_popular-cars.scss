@@ -1,0 +1,22 @@
+.popular-cars {
+  margin-bottom: 30px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px;
+  }
+
+  &__li {
+    padding: 5px;
+  }
+
+  &__header {
+    font-size: 0.93vw;
+    line-height: 0.93vw;
+    font-weight: 500;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}

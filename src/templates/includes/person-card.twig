@@ -1,0 +1,77 @@
+<div class="person-card">
+	<div class="person-card__header">
+		<div class="person-card__ava"><img src="assets/img/person-card/ava/{{item.avaSrc}}.png" alt="" class="person-card__ava-img"></div>
+		<div class="person-card__name-container">
+			<div class="person-card__name">
+				<span class="person-card__name-txt">{{item.name}}</span>
+				<div class="person-card__status">
+					{% if item.statusBusy %}
+						<div class="person-card__status-icon person-card__status-icon--busy">
+							<div class="person-card__status-tooltip">Механик занят</div>
+						</div>
+					{% else %}
+						<div class="person-card__status-icon">
+							<div class="person-card__status-tooltip">Механик свободен</div>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="person-card__location">{{item.location|default('Москва')}}</div>
+		</div>
+		<ul class="person-card__about-list">
+			{% for item in item.aboutList %}
+				<li class="person-card__about-li">
+					<div class="person-card__about-item">
+						<img src="assets/img/icons/check-mark.png" alt="">
+						<span class="person-acrd__about-txt">{{item.txt}}</span>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+		<div class="person-card__info">
+			{% if item.phone %}
+				<a href="tel:{{item.phoneHref}}" class="person-card__phone">{{item.phoneNumber}}</a>
+			{% endif %}
+			<div class="person-card__schedule">{{item.schedule|default('Выезд 24 часа, круглосуточно')}}</div>
+		</div>
+	</div>
+	<div class="person-card__slider-container">
+		<div class="person-card__slider">
+			{% for item in item.sliderList %}
+				<a href="#" class="person-card__slide">
+					<img src="assets/img/person-card/slider/{{item.imgSrc}}.png" alt="">
+				</a>
+			{% endfor %}
+		</div>
+	</div>
+	<ul class="person-card__services-list">
+		{% for item in item.servicesList %}
+			<li class="person-card__services-li">
+				<div class="person-card__services-item">
+					<div class="person-card__services-desc">{{item.desc}}</div>
+					<div class="person-card__services__price">
+						от
+						{{item.priceNumber}}
+						₽
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+	<div class="person-card__footer">
+		<a href="#" class="person-card__all-services">Все услуги ({{item.servicesNumber}})</a>
+		<div class="person-card__rating">
+			<img src="assets/img/icons/star.png" alt="" class="person-card__rating-icon">
+			<div class="person-card__rating-score">{{item.ratingScore}}</div>
+		</div>
+		<div class="person-card__reviews-number">(4 отзыва)</div>
+		<div class="person-card__payment">
+			<img src="assets/img/cards.png" alt="" class="person-card__payment-img">
+			<div class="person-card__payment-txt">онлайн оплата по карте</div>
+		</div>
+		<a href="#" class="btn person-card__call">
+			<img src="assets/img/icons/phone.png" alt="" class="btn__icon">
+			вызвать мастера
+		</a>
+	</div>
+</div>

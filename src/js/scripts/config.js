@@ -1,3 +1,3 @@
 const APP = {
-	name: 'iBrush HTML Starter'
+	name: 'HTML Starter'
 };

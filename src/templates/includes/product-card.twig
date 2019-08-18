@@ -1,0 +1,19 @@
+<div class="product-card">
+	<div class="product-card__img-box">
+		<img src="assets/img/popular/{{item.imgSrc}}.png" alt="" class="product-card__img">
+	</div>
+	<div class="product-card__content">
+		<a href="#" class="product-card__header">{{item.header}}</a>
+		<div class="product-card__bottom">
+			<a href="#" class="btn product-card__btn">Заказать услугу</a>
+			<div class="product-card__price">
+				<div class="product-card__price-number">
+					от
+					{{item.priceNumber|default('2 500')}}
+					₽
+				</div>
+				<div class="product-card__price-desc">{{item.priceDesc|default('за услугу')}}</div>
+			</div>
+		</div>
+	</div>
+</div>

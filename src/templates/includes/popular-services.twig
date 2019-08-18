@@ -1,0 +1,33 @@
+{% set popularServicesList = {
+	item0: {
+		imgSrc: 'popular__0',
+		header: 'Замена аккумулятора'
+	},
+	item1: {
+		imgSrc: 'popular__1',
+		header: 'Отключение сигнализации автомобиля'
+	},
+	item2: {
+		imgSrc: 'popular__2',
+		header: 'Отключение иммобилайзера'
+	},
+	item3: {
+		imgSrc: 'popular__3',
+		header: 'Замена колеса с поврежденными гайками'
+	},
+	item4: {
+		imgSrc: 'popular__4',
+		header: 'Вскрытие автомобиля'
+	}
+} %}
+
+<section class="popular-services">
+	<div class="popular-services__header">{{header|default('Популярные услуги')}}</div>
+	<ul class="popular-services__list">
+		{% for item in popularServicesList %}
+			<li class="popular-services__li">
+				{% include 'product-card.twig' %}
+			</li>
+		{% endfor %}
+	</ul>
+</section>

@@ -2,6 +2,7 @@
   $self: &;
   width: 14.58vw;
   border-bottom: 1px solid #E6E6E6;
+  float: left;
 
   &__header {
     display: flex;
@@ -9,7 +10,7 @@
     align-items: center;
     background: #FFCC33;
     border-radius: 0px 20px 0px 0px;
-    padding: 12px 10px;
+    padding: vw(12px) vw(10px);
     position: relative;
 
 

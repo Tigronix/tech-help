@@ -4,6 +4,13 @@
 	<main class="page-main">
 		<div class="container page-main__container">
 			{% include 'templates/includes/aside.twig' %}
+			<div class="page-main__content">
+				{% include 'templates/includes/search.twig' %}
+				{% include 'templates/includes/popular-cars.twig' %}
+				{% include 'templates/includes/popular-services.twig' %}
+				{% include 'templates/includes/text-block.twig' %}
+				{% include 'templates/includes/persons.twig' %}
+			</div>
 		</div>
 	</main>
 {% endblock %}

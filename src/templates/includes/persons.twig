@@ -1,0 +1,68 @@
+{% set personList = {
+	personItem: {
+		avaSrc: 'ava__0',
+		name: 'Александр',
+		aboutList: {
+			item0: {
+				txt: 'Опыт работы 10 лет'
+			},
+			item1: {
+				txt: 'Приедет через 15 минут'
+			}
+		},
+		sliderList: {
+			item0: {
+				imgSrc: 'person-card__0'
+			},
+			item1: {
+				imgSrc: 'person-card__1'
+			},
+			item2: {
+				imgSrc: 'person-card__2'
+			},
+			item3: {
+				imgSrc: 'person-card__3'
+			},
+			item4: {
+				imgSrc: 'person-card__4'
+			},
+			item5: {
+				imgSrc: 'person-card__0'
+			},
+			item6: {
+				imgSrc: 'person-card__1'
+			},
+			item7: {
+				imgSrc: 'person-card__2'
+			},
+			item8: {
+				imgSrc: 'person-card__3'
+			},
+			item9: {
+				imgSrc: 'person-card__4'
+			},
+		},
+    servicesList: {
+      item0: {
+        desc: 'Аварийный слив топлива',
+        priceNumber: '700'
+      },
+      item1: {
+        desc: 'Зарядка аккумулятора',
+        priceNumber: '2 500'
+      },
+    },
+    servicesNumber: '25',
+    ratingScore: '4.8'
+	}
+} %}
+
+<section class="persons">
+	<ul class="persons__list">
+		{% for item in personList %}
+			<li class="persons__li">
+				{% include 'person-card.twig' %}
+			</li>
+		{% endfor %}
+	</ul>
+</section>

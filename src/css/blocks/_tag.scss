@@ -1,0 +1,29 @@
+.tag {
+  $self: &;
+  cursor: pointer;
+
+  &__input {
+    display: none;
+  }
+
+  &__txt {
+    background: #ecf1f7;
+    border-radius: 5px;
+    min-width: vw(100px);
+    padding: 0px vw(15px);
+    height: vw(35px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: .83vw;
+    line-height: .83vw;
+    color: #3D7AB6;
+    transition: background .3s, color .3s;
+
+    #{$self}__input:checked + & {
+      background: #535E8A;
+      color: #fff;
+    }
+  }
+}

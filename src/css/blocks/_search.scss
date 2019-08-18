@@ -1,0 +1,41 @@
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+
+  &__input-box {
+    position: relative;
+    flex: 1;
+  }
+
+  &__input {
+    width: 100%;
+    border: 2px solid #FFDB4D;
+    border-radius: 5px 0 0 5px;
+    display: block;
+    font-size: 0.93vw;
+    line-height: 0.93vw;
+    color: #999;
+    padding: vw(15px) vw(15px) vw(15px) vw(60px);
+  }
+
+  &__icon {
+    width: vw(20px);
+    height: vw(20px);
+    display: block;
+    position: absolute;
+    left: vw(20px);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__submit {
+    background: #FFDB4D;
+    border-radius: 0px 50px 50px 0px;
+    font-size: 0.93vw;
+    line-height: 0.93vw;
+    color: #333;
+    text-transform: uppercase;
+    width: 265px;
+  }
+}

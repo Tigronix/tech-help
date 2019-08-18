@@ -14,8 +14,15 @@
 @import 'blocks/container';
 @import 'blocks/navigation';
 @import 'blocks/checkbox';
+@import 'blocks/search';
+@import 'blocks/tag';
+@import 'blocks/product-card';
+@import 'blocks/btn';
 
 // sections
 @import 'sections/page-header';
 @import 'sections/aside';
 @import 'sections/page-main';
+@import 'sections/popular-cars';
+@import 'sections/popular-services';
+@import 'sections/text-block';

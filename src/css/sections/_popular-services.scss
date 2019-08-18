@@ -1,0 +1,22 @@
+.popular-services {
+  margin-bottom: 27px;
+  
+  &__header {
+    font-size: 1.25vw;
+    line-height: 1.25vw;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+  }
+
+  &__li {
+    padding: 10px;
+    width: calc(100% / 5);
+  }
+}
