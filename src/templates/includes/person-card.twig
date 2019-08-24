@@ -1,6 +1,6 @@
 <div class="person-card">
 	<div class="person-card__header">
-		<div class="person-card__ava"><img src="assets/img/person-card/ava/{{item.avaSrc}}.png" alt="" class="person-card__ava-img"></div>
+		<div class="person-card__ava"><img class="person-card__ava-img" src="assets/img/person-card/ava/{{item.avaSrc}}.png" alt="" class="person-card__ava-img"></div>
 		<div class="person-card__name-container">
 			<div class="person-card__name">
 				<span class="person-card__name-txt">{{item.name}}</span>
@@ -22,24 +22,22 @@
 			{% for item in item.aboutList %}
 				<li class="person-card__about-li">
 					<div class="person-card__about-item">
-						<img src="assets/img/icons/check-mark.png" alt="">
-						<span class="person-acrd__about-txt">{{item.txt}}</span>
+						<img class="person-card__about-img" src="assets/img/icons/check-mark.png" alt="">
+						<span class="person-card__about-txt">{{item.txt}}</span>
 					</div>
 				</li>
 			{% endfor %}
 		</ul>
 		<div class="person-card__info">
-			{% if item.phone %}
-				<a href="tel:{{item.phoneHref}}" class="person-card__phone">{{item.phoneNumber}}</a>
-			{% endif %}
+			<a href="tel:{{item.phoneHref}}" class="person-card__phone">{{item.phoneNumber}}</a>
 			<div class="person-card__schedule">{{item.schedule|default('Выезд 24 часа, круглосуточно')}}</div>
 		</div>
 	</div>
 	<div class="person-card__slider-container">
-		<div class="person-card__slider">
+		<div class="person-card__slider js-person-card-slider">
 			{% for item in item.sliderList %}
-				<a href="#" class="person-card__slide">
-					<img src="assets/img/person-card/slider/{{item.imgSrc}}.png" alt="">
+				<a data-fancybox="{{item.galleryName}}" href="assets/img/person-card/slider/{{item.imgSrc}}.png" class="person-card__slide">
+					<img class="person-card__slide-img" src="assets/img/person-card/slider/{{item.imgSrc}}.png" alt="">
 				</a>
 			{% endfor %}
 		</div>
@@ -48,11 +46,11 @@
 		{% for item in item.servicesList %}
 			<li class="person-card__services-li">
 				<div class="person-card__services-item">
-					<div class="person-card__services-desc">{{item.desc}}</div>
-					<div class="person-card__services__price">
+					<a href="#" class="person-card__services-desc"><span class="person-card__services-desc-txt">{{item.desc}}</span></a>
+					<div class="person-card__services-price">
 						от
 						{{item.priceNumber}}
-						₽
+						<img src="assets/img/icons/rouble.png" alt="" class="person-card__services-rouble">
 					</div>
 				</div>
 			</li>

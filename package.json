@@ -13,6 +13,7 @@
     "build": "gulp build"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "gsap": "^2.1.3",
     "hammerjs": "^2.0.8",
     "jquery": "^3.3.1",

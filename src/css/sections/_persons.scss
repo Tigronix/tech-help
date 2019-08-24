@@ -1,0 +1,14 @@
+.persons {
+  margin-bottom: 40px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: vw(-20px);
+  }
+
+  &__li {
+    width: calc(100% / 2);
+    padding: vw(20px);
+  }
+}
