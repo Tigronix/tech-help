@@ -1,0 +1,50 @@
+{% set advantagesSlider = {
+	item0: {
+		number: '10',
+		title: 'ЛЕТ',
+		desc: 'Помогаем <br> вам на дорогах'
+	},
+	item1: {
+		number: '25',
+		title: 'АВТОМЕХАНИКОВ',
+		desc: 'Круглосуточно дежурят <br> на дорогах Москвы'
+	},
+	item2: {
+		number: '260',
+		title: 'ВИДОВ РАБОТ',
+		desc: 'Все работы выполняются <br> на выезде'
+	},
+	item3: {
+		number: '10',
+		title: 'ЛЕТ',
+		desc: 'Помогаем <br> вам на дорогах'
+	},
+	item4: {
+		number: '25',
+		title: 'АВТОМЕХАНИКОВ',
+		desc: 'Круглосуточно дежурят <br> на дорогах Москвы'
+	},
+	item5: {
+		number: '260',
+		title: 'ВИДОВ РАБОТ',
+		desc: 'Все работы выполняются <br> на выезде'
+	},
+} %}
+
+<section class="advantages">
+	<div class="advantages__logo">
+		<img src="assets/img/logo.png" alt="" class="advantages__logo-img">
+		<div class="advantages__logo-desc">техническая помощь</div>
+	</div>
+	<div class="advantages__slider js-advantages-slider">
+		{% for item in advantagesSlider %}
+			<div class="advantages__slide">
+				<div class="advantages__number">{{item.number}}</div>
+				<div class="advantages__content">
+					<div class="advantages__title"><span class="advantages__title-txt">{{item.title}}</span></div>
+					<div class="advantages__desc">{{item.desc}}</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</section>

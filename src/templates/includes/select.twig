@@ -1,0 +1,7 @@
+<div class="form-elem__select-wrap">
+  <select class="form-elem form-elem--select">
+    {% for item in selectList %}
+      <option value="{{item.value}}">{{item.txt}}</option>
+    {% endfor %}
+  </select>
+</div>

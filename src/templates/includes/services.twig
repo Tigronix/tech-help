@@ -1,0 +1,142 @@
+{% set servicesList = {
+	servicesItem0: {
+		imgSrc: 'digital-map',
+		title: 'Выездная техпомощь',
+    itemList: {
+      item0: {
+        imgSrc: 'key-blue',
+        desc: 'Изготовление ключей',
+        price: 'до 5 500 руб.'
+      },
+      item1: {
+        imgSrc: 'key-blue',
+        desc: 'Сделать дубликат ключа',
+        price: 'от 2 500 руб.'
+      },
+      item2: {
+        imgSrc: 'maintenance',
+        desc: 'Прикурить автомобиль',
+        price: 'от 2 500 руб.'
+      },
+      item3: {
+        imgSrc: 'chassis',
+        desc: 'Замена ремня ГРМ компьютерная диагностика автомобиля',
+        price: 'от 2 500 руб. <br> до 5 500 руб.'
+      },
+      item4: {
+        imgSrc: 'battery-blue',
+        desc: 'Замена аккумулятора',
+        price: 'от 2 500 руб.'
+      },
+      item5: {
+        imgSrc: 'tire-blue',
+        desc: 'Снять секретки с колес',
+        price: 'от 2 500 руб.'
+      },
+    }
+	},
+	servicesItem1: {
+		imgSrc: 'battery-1',
+		title: 'Выездной автоэлектрик',
+    itemList: {
+      item0: {
+        imgSrc: 'tanker',
+        desc: 'Не подходит электричество к бензонасосу',
+        price: 'от 2 500 руб.'
+      },
+      item1: {
+        imgSrc: 'exhaust-pipe',
+        desc: 'Пробивает на массу автомобиля',
+        price: 'от 2 500 руб.'
+      },
+      item2: {
+        imgSrc: 'fan',
+        desc: 'Вентилятор не работает, закипает машина',
+        price: 'от 2 500 руб.'
+      },
+      item3: {
+        imgSrc: 'tool',
+        desc: 'Установить инвертор (преобразователь) <br> с 12В на 220В',
+        price: 'от 2 500 руб.'
+      },
+      item4: {
+        imgSrc: 'tachometer',
+        desc: 'Загорелся чек аккумулятора на ходу',
+        price: 'от 2 500 руб.'
+      },
+      item5: {
+        imgSrc: 'steering-wheel',
+        desc: 'Ошибка рулевой колонки',
+        price: 'от 2 500 руб.'
+      },
+    }
+	},
+	servicesItem2: {
+		imgSrc: 'tire',
+		title: 'Мобильный шиномонтаж, секретки, болты',
+    bigTitle: true,
+    itemList: {
+      item0: {
+        imgSrc: 'tire-blue',
+        desc: 'Секретка приварилась, прикипела',
+        price: 'от 2 500 руб.'
+      },
+      item1: {
+        imgSrc: 'tire-blue',
+        desc: 'Сделать дубликат ключа',
+        price: 'от 2 500 руб.'
+      },
+      item2: {
+        imgSrc: 'tire-blue',
+        desc: 'Сломался ключ от секреток',
+        price: 'от 2 500 руб.'
+      },
+      item3: {
+        imgSrc: 'tire-blue',
+        desc: 'Сорваны шлицы на болте, <br> выкрутить винт',
+        price: 'от 2 500 руб.'
+      },
+      item4: {
+        imgSrc: 'tire-blue',
+        desc: 'Замена колеса',
+        price: 'от 2 500 руб.'
+      },
+      item5: {
+        imgSrc: 'tire-blue',
+        desc: 'Снять секретки с колес',
+        price: 'от 2 500 руб.'
+      },
+    }
+	},
+} %}
+
+<section class="services">
+  <div class="services__title">Цены на услуги техпомощи</div>
+	<ul class="services__list">
+		{% for item in servicesList %}
+			<li class="services__li">
+				<div class="services__item">
+          <div class="services__header {% if item.bigTitle %}services__header--big-title{% endif %}">
+            <img src="assets/img/icons/{{item.imgSrc}}.png" alt="" class="services__header-img">
+            <div class="services__header-desc">{{item.title}}</div>
+          </div>
+          <div class="services__content">
+            <ul class="services__item-list">
+              {% for item in item.itemList %}
+              <li class="services__item-li">
+                <div class="services__item-item">
+                  <a href="#" class="services__link">
+                    <img src="assets/img/icons/{{item.imgSrc}}.png" alt="" class="services__item-icon">
+                    <div class="services__item-txt"><span class="services__item-txt-border">{{item.desc}}</span></div>
+                  </a>
+                  <span class="services__price">{{item.price}}</span>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+			</li>
+		{% endfor %}
+	</ul>
+</section>

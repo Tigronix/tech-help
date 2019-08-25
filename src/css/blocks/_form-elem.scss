@@ -1,0 +1,16 @@
+.form-elem {
+  width: 100%;
+  font-size: vw(18px);
+  line-height: vw(18px);
+  color: #999;
+  padding: vw(16px) vw(20px);
+  background: #fff;
+  border-radius: 3px;
+  border: none;
+
+  &--textarea {
+    min-height: 98px;
+    resize: vertical;
+    padding: vw(16px);
+  }
+}

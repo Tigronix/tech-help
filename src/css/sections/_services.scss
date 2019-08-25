@@ -1,0 +1,125 @@
+.services {
+  $self: &;
+
+  &__title {
+    font-size: vw(24px);
+    line-height: vw(24px);
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: vw(-20px);
+    counter-reset: services-counter;
+  }
+
+  &__li {
+    width: calc(100% / 3);
+    padding: vw(20px);
+    counter-increment: services-counter;
+
+
+  }
+
+  &__header {
+    height: 60px;
+    background: #FFCC33;
+    border-radius: vw(20px) vw(20px) 0px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 vw(18px);
+  }
+
+  &__header-img {
+    width: vw(40px);
+    height: vw(40px);
+    position: absolute;
+    left: vw(18px);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__header-desc {
+    font-size: vw(18px);
+    line-height: vw(18px);
+    color: #212021;
+    font-weight: 500;
+
+    #{$self}__header--big-title & {
+      padding-left: vw(50px);
+    }
+
+    &:before {
+      content: counter(services-counter) ". ";
+      display: inline;
+    }
+  }
+
+  &__item-list {
+
+  }
+
+  &__item-item {
+    padding: vw(15px) vw(14px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    #{$self}__item-li:nth-child(odd) & {
+      background: #fff;
+    }
+
+    #{$self}__item-li:nth-child(even) & {
+      background: #F5F7FA;
+    }
+  }
+
+  &__item-icon {
+    width: vw(20px);
+    height: vw(20px);
+    margin-right: vw(10px);
+  }
+
+  &__item-txt {
+    font-size: vw(16px);
+    line-height: vw(16px);
+    color: #0044BB;
+    flex: 1;
+  }
+
+  &__item-txt-border {
+    border-bottom: 1px dashed transparent;
+    transition: border-color .3s;
+
+    @include hover {
+      border-color: #0044BB;
+    }
+  }
+
+  &__price {
+    margin-left: auto;
+    font-size: vw(16px);
+    line-height: vw(16px);
+    font-weight: 500;
+    color: #3C3A41;
+
+    br {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-decoration: none;
+    flex: 1;
+    padding-right: vw(0px);
+  }
+}

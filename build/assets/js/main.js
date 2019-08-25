@@ -20,7 +20,17 @@ var APP = {
 		});
 	};
 
+	var advantagesSlider = function advantagesSlider() {
+		var $sliders = $('.js-advantages-slider');
+
+		$sliders.slick({
+			slidesToShow: 3,
+			infinite: false
+		});
+	};
+
 	// sliders
 	personCardSlider();
+	advantagesSlider();
 })();
 //# sourceMappingURL=main.js.map
