@@ -1,5 +1,6 @@
 .services {
   $self: &;
+  margin-bottom: vw(57px);
 
   &__title {
     font-size: vw(24px);
@@ -7,6 +8,11 @@
     color: #333;
     font-weight: 500;
     margin-bottom: 15px;
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 18px;
+    }
   }
 
   &__list {
@@ -14,6 +20,10 @@
     flex-wrap: wrap;
     margin: vw(-20px);
     counter-reset: services-counter;
+
+    @include mobile {
+      margin: -8px;
+    }
   }
 
   &__li {
@@ -21,7 +31,10 @@
     padding: vw(20px);
     counter-increment: services-counter;
 
-
+    @include mobile {
+      padding: 8px;
+      width: 100%;
+    }
   }
 
   &__header {
@@ -34,6 +47,13 @@
     align-items: center;
     position: relative;
     padding: 0 vw(18px);
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 18px;
+      padding: 0 18px;
+      border-radius: 20px 20px 0 0;
+    }
   }
 
   &__header-img {
@@ -43,6 +63,12 @@
     left: vw(18px);
     top: 50%;
     transform: translateY(-50%);
+
+    @include mobile {
+      width: 40px;
+      height: 40px;
+      left: 18px;
+    }
   }
 
   &__header-desc {
@@ -51,8 +77,17 @@
     color: #212021;
     font-weight: 500;
 
+    @include mobile {
+      font-size: 14px;
+      line-height: 14px;
+    }
+
     #{$self}__header--big-title & {
       padding-left: vw(50px);
+
+      @include mobile {
+        padding-left: 50px;
+      }
     }
 
     &:before {
@@ -70,6 +105,12 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    border: 1px solid #E6E6E6;
+    border-top: none;
+
+    @include mobile {
+      padding: 15px 14px;
+    }
 
     #{$self}__item-li:nth-child(odd) & {
       background: #fff;
@@ -84,6 +125,12 @@
     width: vw(20px);
     height: vw(20px);
     margin-right: vw(10px);
+
+    @include mobile {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
   }
 
   &__item-txt {
@@ -91,6 +138,11 @@
     line-height: vw(16px);
     color: #0044BB;
     flex: 1;
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 14px;
+    }
   }
 
   &__item-txt-border {
@@ -108,6 +160,11 @@
     line-height: vw(16px);
     font-weight: 500;
     color: #3C3A41;
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 16px; 
+    }
 
     br {
       margin-bottom: 5px;

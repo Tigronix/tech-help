@@ -21,6 +21,15 @@
     color: #3D7AB6;
     transition: background .3s, color .3s;
 
+    @include mobile {
+      font-size: 16px;
+      line-height: 16px;
+      min-width: 100px;
+      height: auto;
+      padding: 10px 30px;
+      text-align: center;
+    }
+
     #{$self}__input:checked + & {
       background: #535E8A;
       color: #fff;

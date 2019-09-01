@@ -1,0 +1,64 @@
+{% set servicesMoscowList = {
+  item0: {
+    txt: 'Отключить сигнализацию'
+  },
+  item1: {
+    txt: 'Прикурить автомобиль'
+  },
+  item2: {
+    txt: 'Выезд автоэлектрика'
+  },
+  item3: {
+    txt: 'Заменить аккумулятор'
+  },
+  item4: {
+    txt: 'Открыть машину без ключа'
+  },
+  item5: {
+    txt: 'Снять секретки'
+  },
+  item6: {
+    txt: 'Зарядить аккумулятор'
+  },
+  item7: {
+    txt: 'Отключить Great Guard'
+  },
+  item8: {
+    txt: 'Компьютерная диагностика автомобиля'
+  },
+  item9: {
+    txt: 'Замена ремня ГРМ'
+  },
+  item10: {
+    txt: 'Ремонт электрооборудования'
+  },
+  item11: {
+    txt: 'Разблокировать техноблок'
+  },
+  item12: {
+    txt: 'Отключить сигнализацию'
+  },
+  item13: {
+    txt: 'Прикурить автомобиль'
+  },
+  item14: {
+    txt: 'Выезд автоэлектрика'
+  },
+  item15: {
+    txt: 'Заменить аккумулятор'
+  },
+  item16: {
+    txt: 'Открыть машину без ключа'
+  },
+} %}
+
+<section class="services-moscow">
+	<div class="services-moscow__header">Наши услуги на выезде в Москве</div>
+	<ul class="services-moscow__list">
+		{% for item in servicesMoscowList %}
+			<li class="services-moscow__li">
+				{% include 'tag.twig' %}
+			</li>
+		{% endfor %}
+	</ul>
+</section>

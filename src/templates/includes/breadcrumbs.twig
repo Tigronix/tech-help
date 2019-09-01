@@ -1,0 +1,24 @@
+{% set breadList = {
+  item0: {
+    txt: 'Главная'
+  },
+  item1: {
+    txt: 'Замена аккумулятора'
+  },
+  item2: {
+    txt: 'BMW'
+  },
+  item3: {
+    txt: 'BMW X6'
+  },
+} %}
+
+<section class="breadcrumbs">
+	<ul class="breadcrumbs__list">
+		{% for item in breadList %}
+			<li class="breadcrumbs__li">
+				<a href="{{item.href|default('#')}}" class="breadcrumbs__link"><span class="breadcrumbs__txt">{{item.txt}}</span></a>
+			</li>
+		{% endfor %}
+	</ul>
+</section>

@@ -3,49 +3,49 @@
 		headerImg: 'timing-belt',
     headerTxt: 'Выездная техпомощь',
     checkboxList: {
-    item0: {desc: 'Замена аккумулятора', checked: true},
-    item1: {desc: 'Слив топлива'},
-    item2: {desc: 'Вскрытие автомобиля'},
-    item3: {desc: 'Откручивание болтов'},
-    item4: {desc: 'Подвоз топлива'},
-    item5: {desc: 'Прикурить автомобиль'},
+    item0: {desc: 'Замена аккумулятора', checked: true, href: 'https://www.google.com/'},
+    item1: {desc: 'Слив топлива', href: 'https://www.google.com/'},
+    item2: {desc: 'Вскрытие автомобиля', href: 'https://www.google.com/'},
+    item3: {desc: 'Откручивание болтов', href: 'https://www.google.com/'},
+    item4: {desc: 'Подвоз топлива', href: 'https://www.google.com/'},
+    item5: {desc: 'Прикурить автомобиль', href: 'https://www.google.com/'},
     }
 	},
 	asideItem1: {
 		headerImg: 'battery',
     headerTxt: 'Выездной автоэлектрик',
     checkboxList: {
-    item0: {desc: 'Замена генератора'},
-    item1: {desc: 'Замена ремня водяного насоса'},
-    item2: {desc: 'Замена гидроусилителя'},
-    item3: {desc: 'Замена датчика температуры'},
-    item4: {desc: 'Замена троса сцепления'},
-    item5: {desc: 'Замена гидроусилителя'},
-    item6: {desc: 'Слив топлива'},
-    item7: {desc: 'Вскрытие автомобиля'},
-    item8: {desc: 'Откручивание болтов'},
-    item9: {desc: 'Подвоз топлива'},
-    item10: {desc: 'Прикурить автомобиль'},
+    item0: {desc: 'Замена генератора', href: 'https://www.google.com/'},
+    item1: {desc: 'Замена ремня водяного насоса', href: 'https://www.google.com/'},
+    item2: {desc: 'Замена гидроусилителя', href: 'https://www.google.com/'},
+    item3: {desc: 'Замена датчика температуры', href: 'https://www.google.com/'},
+    item4: {desc: 'Замена троса сцепления', href: 'https://www.google.com/'},
+    item5: {desc: 'Замена гидроусилителя', href: 'https://www.google.com/'},
+    item6: {desc: 'Слив топлива', href: 'https://www.google.com/'},
+    item7: {desc: 'Вскрытие автомобиля', href: 'https://www.google.com/'},
+    item8: {desc: 'Откручивание болтов', href: 'https://www.google.com/'},
+    item9: {desc: 'Подвоз топлива', href: 'https://www.google.com/'},
+    item10: {desc: 'Прикурить автомобиль', href: 'https://www.google.com/'},
     }
 	},
 	asideItem2: {
 		headerImg: 'suspension',
     headerTxt: 'Мобильный шиномонтаж',
     checkboxList: {
-    item0: {desc: 'Заблокировался замок зажигания'},
-    item1: {desc: 'Отключение иммобилайзера'},
-    item2: {desc: 'Поиск утечек тока в автомобиле'},
-    item3: {desc: 'Отключение сигнализации'},
-    item4: {desc: 'Компьютерная диагностика'},
-    item5: {desc: 'Замена предохранителей'},
-    item6: {desc: 'Замена гидроусилителя'},
-    item7: {desc: 'Замена датчика температуры'},
-    item8: {desc: 'Замена троса сцепления'},
+    item0: {desc: 'Заблокировался замок зажигания', href: 'https://www.google.com/'},
+    item1: {desc: 'Отключение иммобилайзера', href: 'https://www.google.com/'},
+    item2: {desc: 'Поиск утечек тока в автомобиле', href: 'https://www.google.com/'},
+    item3: {desc: 'Отключение сигнализации', href: 'https://www.google.com/'},
+    item4: {desc: 'Компьютерная диагностика', href: 'https://www.google.com/'},
+    item5: {desc: 'Замена предохранителей', href: 'https://www.google.com/'},
+    item6: {desc: 'Замена гидроусилителя', href: 'https://www.google.com/'},
+    item7: {desc: 'Замена датчика температуры', href: 'https://www.google.com/'},
+    item8: {desc: 'Замена троса сцепления', href: 'https://www.google.com/'},
     }
 	},
 } %}
 
-<aside class="aside">
+<aside class="aside js-aside">
 	<ul class="aside__list">
 		{% for item in asideList %}
 			<li class="aside__li">
@@ -59,7 +59,9 @@
 							{% for item in item.checkboxList %}
 								<li class="aside__checkbox-li">
 									<div class="aside__checkbox-item">
-										{% include 'checkbox.twig' %}
+										{% include 'checkbox.twig' with {
+											mod: 'js-checkbox-link'
+										} %}
 									</div>
 								</li>
 							{% endfor %}

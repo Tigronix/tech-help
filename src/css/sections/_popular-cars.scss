@@ -1,6 +1,19 @@
 .popular-cars {
   margin-bottom: 30px;
 
+  @include mobile {
+    display: none;
+  }
+
+  &--mobile {
+    display: none;
+
+    @include mobile {
+      display: block;
+      margin-bottom: 0;
+    }
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -9,6 +22,10 @@
 
   &__li {
     padding: 5px;
+
+    &:first-child {
+      width: 100%;
+    }
   }
 
   &__header {
@@ -18,5 +35,12 @@
     height: 100%;
     display: flex;
     align-items: center;
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 18px;
+      margin-bottom: 11px;
+      justify-content: center;
+    }
   }
 }

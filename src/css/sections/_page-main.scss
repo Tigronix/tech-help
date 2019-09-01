@@ -1,6 +1,10 @@
 .page-main {
   margin-bottom: 90px;
 
+  @include mobile {
+    margin-bottom: 40px;
+  }
+
   &__container {
     &:after {
       display: block;
@@ -13,5 +17,11 @@
     float: left;
     width: calc(100% - 14.58vw);
     padding-left: 20px;
+
+    @include mobile {
+      padding-left: 0;
+      width: 100%;
+      float: none;
+    }
   }
 }

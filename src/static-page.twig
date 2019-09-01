@@ -1,0 +1,23 @@
+{% extends 'templates/page.twig' %}
+{% block title %}Статическая страница{% endblock %}
+{% block page %}
+	{% include 'templates/includes/breadcrumbs.twig' %}
+	<main class="page-main">
+		<div class="container page-main__container">
+			{% include 'templates/includes/aside.twig' %}
+			<div class="page-main__content">
+				{% include 'templates/includes/search.twig' %}
+					<h1 class="h1">Замена аккумулятора BMW X6</h1>
+					<p class="text">Любой автомобиль может внезапно выйти из строя. Готовность к такой ситуации подразумевает наличие контактов нужной компании. Обратитесь к нам, техпомощь на дороге будет оказана в течение 30-60 минут. Мы тщательно организовали работу
+						бригад для достижения такой скорости прибытия специалистов на место аварий и поломок. Автопомощь включает в себя проведение мелкого ремонта: шиномонтаж, замена или прикуривание аккумулятора, отогрев мотора в зимнее время, отключение сигнализации. В
+						ситуациях, когда устранение проблемы на месте невозможно, сотрудники организуют буксировку транспортного средства. При повреждениях ходовой части и сильных механических деформациях автомобиль доставляют в автосервис с помощью эвакуатора.</p>
+				{% include 'templates/includes/ad-services.twig' %}
+				{% include 'templates/includes/persons.twig' %}
+				{% include 'templates/includes/advantages.twig' %}
+				{% include 'templates/includes/services.twig' %}
+				{% include 'templates/includes/form.twig' %}
+				{% include 'templates/includes/services-moscow.twig' %}
+			</div>
+		</div>
+	</main>
+{% endblock %}

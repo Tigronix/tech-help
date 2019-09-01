@@ -1,28 +1,31 @@
 <form action="" class="form">
-  <img src="assets/img/sellout-guy.png" alt="" class="form__man">
-  <div class="form__info">
-    <div class="form__header">ОНЛАЙН ЗАЯВКА</div>
-    <div class="form__desc">Отправьте заявку, автомеханик свяжется с вами через 1 минуту</div>
-  </div>
-  <div class="form__content">
-    <ul class="form__list">
-      <li class="form__li">
-        <div class="form__item">
-          {% include 'input.twig' with {
-            placeholder: 'Имя'
-          } %}
-        </div>
-      </li>
-      <li class="form__li">
-        <div class="form__item">
-            {% include 'input.twig' with {
-              placeholder: 'Телефон для связи'
-            } %}
-        </div>
-      </li>
-      <li class="form__li">
-        <div class="form__item">
-          {% include 'select.twig' with {
+	<div class="form__container">
+		<img src="assets/img/sellout-guy.png" alt="" class="form__man">
+		<div class="form__info">
+			<div class="form__header"><span class="form__header-txt">ОНЛАЙН ЗАЯВКА</span></div>
+			<div class="form__desc">Отправьте заявку, автомеханик свяжется с вами через 1 минуту</div>
+		</div>
+		<div class="form__content">
+			<ul class="form__list">
+				<li class="form__li form__li--33">
+					<div class="form__item">
+						{% include 'input.twig' with {
+							placeholder : 'Имя'
+						} %}
+					</div>
+				</li>
+				<li class="form__li form__li--33">
+					<div class="form__item">
+						{% include 'input.twig' with {
+							placeholder : 'Телефон для связи',
+              type: 'phone',
+              phone: true
+						} %}
+					</div>
+				</li>
+				<li class="form__li form__li--33">
+					<div class="form__item">
+						{% include 'select.twig' with {
             selectList: {
               item0: {
                 value: '',
@@ -38,23 +41,24 @@
               },
             }
           } %}
-        </div>
-      </li>
-      <li class="form__li">
-        <div class="form__item">
-          {% include 'textarea.twig' %}
-        </div>
-      </li>
-      <li class="form__li">
-        <div class="form__item">
-          <button type="submit" class="form__submit">Отправить заявку</button>
-          <label class="form__checkbox">
-            <input type="text" class="form__checkbox-input" checked>
-            <span class="form__checkbox-icon"></span>
-            <span class="form__checkbox-desc">Я согласен на обработку персональных данных</span>
-          </label>
-        </div>
-      </li>
-    </ul>
-  </div>
+					</div>
+				</li>
+				<li class="form__li form__li--66">
+					<div class="form__item">
+						{% include 'textarea.twig' %}
+					</div>
+				</li>
+				<li class="form__li form__li--33">
+					<div class="form__item">
+						<button type="submit" class="form__submit">Отправить заявку</button>
+						<label class="form__checkbox">
+							<input type="checkbox" class="form__checkbox-input" checked="checked">
+							<span class="form__checkbox-icon"></span>
+							<span class="form__checkbox-desc">Я согласен на обработку персональных данных</span>
+						</label>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
 </form>

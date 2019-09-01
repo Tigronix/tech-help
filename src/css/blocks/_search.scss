@@ -3,6 +3,11 @@
   flex-wrap: wrap;
   margin-bottom: 15px;
 
+  @include mobile {
+    position: relative;
+    margin-bottom: 8px;
+  }
+
   &__input-box {
     position: relative;
     flex: 1;
@@ -17,6 +22,13 @@
     line-height: 0.93vw;
     color: #999;
     padding: vw(15px) vw(15px) vw(15px) vw(60px);
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 16px;
+      padding: 12px 40px 12px 56px;
+      border-radius: 5px;
+    }
   }
 
   &__icon {
@@ -27,6 +39,10 @@
     left: vw(20px);
     top: 50%;
     transform: translateY(-50%);
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__submit {
@@ -36,6 +52,20 @@
     line-height: 0.93vw;
     color: #333;
     text-transform: uppercase;
-    width: 265px;
+    width: vw(265px);
+
+    @include mobile {
+      width: 20px;
+      height: 20px;
+      font-size: 0;
+      border-radius: 0px;
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: url(../img/icons/search.png) no-repeat center;
+      background-size: 100% auto;
+      z-index: 10;
+    }
   }
 }

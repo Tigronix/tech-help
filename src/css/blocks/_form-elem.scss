@@ -8,9 +8,55 @@
   border-radius: 3px;
   border: none;
 
+  @include mobile {
+    font-size: 18px;
+    line-height: 18px;
+    padding: 16px 20px;
+  }
+
   &--textarea {
     min-height: 98px;
     resize: vertical;
     padding: vw(16px);
+
+    @include mobile {
+      padding: 16px;
+      min-height: 82px;
+    }
+  }
+
+  &__select-wrap {
+    position: relative;
+    background: #fff url(../img/icons/chevron-bot.png) no-repeat right vw(10px) center;
+    background-size: vw(15px) vw(15px);
+
+    @include mobile {
+      background-size: 15px 15px;
+      background-position: right 10px center;
+    }
+  }
+
+  &--select {
+    padding: vw(15px) vw(20px) vw(15px) vw(10px);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    color: rgba(#999, .5);
+
+    @include mobile {
+      padding: 15px 20px 15px 10px;
+    }
+
+    option {
+      color: #999;
+
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+
+  &.changed {
+    color: #999;
   }
 }

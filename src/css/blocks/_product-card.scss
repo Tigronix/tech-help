@@ -3,6 +3,13 @@
   border-radius: 12px;
   background: #fff;
 
+  @include mobile {
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
   &__img-box {
     overflow: hidden;
     border-radius: 10px 10px 0px 0px;
@@ -15,6 +22,10 @@
 
   &__content {
     padding: vw(20px) vw(15px) vw(15px) vw(15px);
+
+    @include mobile {
+      padding: 20px 15px 10px 15px;
+    }
   }
 
   &__header {
@@ -26,6 +37,13 @@
     height: vw(42px);
     border-bottom: 1px solid #EBEBEB;
     margin-bottom: 10px;
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 18px;
+      height: auto;
+      padding-bottom: 23px;
+    }
   }
 
   &__bottom {
@@ -41,6 +59,11 @@
     font-weight: 500;
     color: #FF1F00;
     margin-bottom: 3px;
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 18px;
+    }
   }
 
   &__price-desc {
@@ -48,5 +71,10 @@
     line-height: .83vw;
     color: #999;
     text-align: center;
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 16px;
+    }
   }
 }

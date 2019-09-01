@@ -7,6 +7,10 @@
   align-items: flex-start;
   flex-wrap: wrap;
 
+  @include mobile {
+    padding-left: 30px;
+  }
+
   &__input {
     display: none;
   }
@@ -24,6 +28,11 @@
     left: 0;
     top: 0px;
 
+    @include mobile {
+      width: 20px;
+      height: 20px;
+    }
+
     #{$self}__input:checked + & {
       .checkbox__icon-img {
         opacity: 1;
@@ -38,6 +47,11 @@
     max-height: 12px;
     opacity: 0;
     transition: opacity .3s;
+
+    @include mobile {
+      width: 12px;
+      height: 12px;
+    }
   }
 
   &__desc {
@@ -47,6 +61,11 @@
     border-bottom: 1px dashed transparent;
     transition: border-color .3s;
     display: block;
+
+    @include mobile {
+      font-size: 15px;
+      line-height: 15px;
+    }
 
     #{$self}__input:checked + .checkbox__icon + & {
       color: #0044BB;

@@ -23,7 +23,7 @@
 
 <section class="popular-services">
 	<div class="popular-services__header">{{header|default('Популярные услуги')}}</div>
-	<ul class="popular-services__list">
+	<ul class="popular-services__list js-services-slider">
 		{% for item in popularServicesList %}
 			<li class="popular-services__li">
 				{% include 'product-card.twig' %}

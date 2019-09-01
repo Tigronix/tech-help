@@ -1,16 +1,19 @@
 .navigation {
   width: 43.22vw;
 
+  @include mobile {
+    display: none;
+  }  
+
   &__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    // margin: -0.52vw -4.68vw;
   }
 
   &__li {
-    // padding: 0.52vw 4.68vw;
+
   }
 
   &__link {

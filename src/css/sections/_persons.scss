@@ -1,14 +1,39 @@
 .persons {
   margin-bottom: 40px;
 
+  &__header {
+    font-size: vw(24px);
+    line-height: vw(24px);
+    font-weight: 500;
+    color: #333;
+    margin-bottom: vw(15px);
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 18px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
     margin: vw(-20px);
+
+    @include mobile {
+      display: block;
+      margin: -10px;
+    }
   }
 
   &__li {
     width: calc(100% / 2);
     padding: vw(20px);
+
+    @include mobile {
+      width: 100%;
+      padding: 10px;
+    }
   }
 }

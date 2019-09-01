@@ -1,22 +1,89 @@
 .popular-services {
   margin-bottom: 27px;
-  
+
+  @include mobile {
+    padding: 0 20px;
+    margin-bottom: 16px;
+  }
+
   &__header {
     font-size: 1.25vw;
     line-height: 1.25vw;
     font-weight: 500;
     color: #333;
     margin-bottom: 15px;
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 18px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
   }
 
   &__list {
     display: flex;
     flex-wrap: wrap;
     margin: -10px;
+
+    @include mobile {
+      display: block;
+      margin: 0;
+    }
   }
 
   &__li {
     padding: 10px;
     width: calc(100% / 5);
+
+    @include mobile {
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  @include slickArrows;
+
+  .slick {
+    &-arrow {
+      top: 140px;
+    }
+
+    &-prev {
+      left: 0;
+      transform: translate(-50%, 0);
+    }
+
+    &-next {
+      right: 0;
+      transform: translate(50%, 0);
+    }
+  }
+
+  .slick {
+    &-dots {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        padding: 10px;
+
+        &.slick-active {
+          button {
+            background: #FF1F00;
+          }
+        }
+      }
+
+      button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #DADADA;
+        font-size: 0;
+      }
+    }
   }
 }

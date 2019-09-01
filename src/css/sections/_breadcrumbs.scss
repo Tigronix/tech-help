@@ -1,0 +1,52 @@
+.breadcrumbs {
+  $self: &;
+  margin-bottom: vw(15px);
+
+  @include mobile {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: vw(9px);
+  }
+
+  &__li {
+    padding: vw(9px);
+  }
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+    font-size: vw(15px);
+    line-height: vw(15px);
+    color: #57555C;
+    position: relative;
+    align-items: baseline;
+
+    &:after {
+      display: inline-block;
+      content: '/';
+      color: #999;
+      transform: translate(vw(9px), 0);
+    }
+
+    #{$self}__li:last-child & {
+      color: #999;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  &__txt {
+    border-bottom: 1px dashed #57555C;
+
+    #{$self}__li:last-child & {
+      border-bottom: none;
+    }
+  }
+}

@@ -42,6 +42,20 @@
 			{% endfor %}
 		</div>
 	</div>
+	<ul class="person-card__about-list person-card__about-list--mobile">
+		{% for item in item.aboutList %}
+			<li class="person-card__about-li">
+				<div class="person-card__about-item">
+					<img class="person-card__about-img" src="assets/img/icons/check-mark.png" alt="">
+					<span class="person-card__about-txt">{{item.txt}}</span>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+	<div class="person-card__info person-card__info--mobile">
+		<a href="tel:{{item.phoneHref}}" class="person-card__phone">{{item.phoneNumber}}</a>
+		<div class="person-card__schedule">{{item.schedule|default('Выезд 24 часа, круглосуточно')}}</div>
+	</div>
 	<ul class="person-card__services-list">
 		{% for item in item.servicesList %}
 			<li class="person-card__services-li">

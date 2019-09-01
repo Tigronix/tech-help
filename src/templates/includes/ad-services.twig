@@ -1,0 +1,49 @@
+{% set adServices = {
+  item0: {
+    imgSrc: 'key',
+    desc: 'Изготовление ключей'
+  },
+  item1: {
+    imgSrc: 'maintenance',
+    desc: 'Прикурить автомобиль'
+  },
+  item2: {
+    imgSrc: 'exhaust-pipe--red',
+    desc: 'Пробивает на массу автомобиля'
+  },
+  item3: {
+    imgSrc: 'tool--red',
+    desc: 'Установить инвертор (преобразователь)'
+  },
+  item4: {
+    imgSrc: 'key',
+    desc: 'Сделать дубликат ключа'
+  },
+  item5: {
+    imgSrc: 'battery',
+    desc: 'Замена аккумулятора'
+  },
+  item6: {
+    imgSrc: 'fan--red',
+    desc: 'Вентилятор не работает, закипает машина'
+  },
+  item7: {
+    imgSrc: 'tachometer--red',
+    desc: 'Загорелся чек аккумулятора на ходу'
+  },
+} %}
+
+<section class="ad-services">
+	<div class="ad-services__container">
+		<ul class="ad-services__list">
+			{% for item in adServices %}
+				<li class="ad-services__li">
+					<div class="ad-services__item">
+						<img src="assets/img/icons/{{item.imgSrc}}.png" alt="" class="ad-services__img">
+						<div class="ad-services__desc">{{item.desc}}</div>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>

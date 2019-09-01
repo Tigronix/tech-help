@@ -1,0 +1,116 @@
+{% set pageFooterLinks = {
+	item0: {
+		txt: 'Прикурить автомобиль'
+	},
+	item1: {
+		txt: 'Прикурить автомобиль'
+	},
+	item2: {
+		txt: 'Прикурить автомобиль'
+	},
+	item3: {
+		txt: 'Зарядить аккумулятор'
+	},
+	item4: {
+		txt: 'Зарядить аккумулятор'
+	},
+	item5: {
+		txt: 'Зарядить аккумулятор'
+	},
+	item6: {
+		txt: 'Отключить сигнализацию'
+	},
+	item7: {
+		txt: 'Отключить сигнализацию'
+	},
+	item8: {
+		txt: 'Отключить сигнализацию'
+	},
+	item9: {
+		txt: 'Выезд автоэлектрика'
+	},
+	item10: {
+		txt: 'Выезд автоэлектрика'
+	},
+	item11: {
+		txt: 'Выезд автоэлектрика'
+	},
+	item12: {
+		txt: 'Снять секретки'
+	},
+	item13: {
+		txt: 'Снять секретки'
+	},
+	item14: {
+		txt: 'Снять секретки'
+	}
+} %}
+
+{% set bigList = {
+	item0: {
+		header: 'О КОМПАНИИ'
+	},
+	item1: {
+		header: 'НАШИ УСЛУГИ'
+	},
+	item2: {
+		header: 'ЦЕНЫ'
+	},
+	item3: {
+		header: 'КОНТАКТЫ'
+	},
+} %}
+
+<footer class="page-footer">
+	<div class="container page-footer__container">
+		<div class="page-footer__logo-container">
+			<a href="#" class="page-footer__logo">
+				<img src="assets/img/logo.png" alt="" class="page-footer__logo-img">
+				<span class="page-footer__logo-header"><span class="page-footer__logo-header-txt">СРОЧНАЯ</span></span>
+				<span class="page-footer__logo-desc">ТЕХНИЧЕСКАЯ ПОМОЩЬ</span></a>
+			<button type="button" class="btn page-footer__btn">
+				<img src="assets/img/icons/phone.png" alt="" class="btn__icon">
+				Вызвать мастера
+			</button>
+		</div>
+		<div class="page-footer__links">
+			<ul class="page-footer__big-list">
+				{% for item in bigList %}
+					<li class="page-footer__big-li">
+						<div class="page-footer__links-header">{{item.header}}</div>
+					</li>
+				{% endfor %}
+			</ul>
+			<ul class="page-footer__link-list">
+				{% for item in pageFooterLinks %}
+					<li class="page-footer__link-li">
+						<a href="{{item.href|default('#')}}" class="page-footer__link">{{item.txt}}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="page-footer__info">
+			<a href="tel:+74954320777" class="page-footer__phone">
+				<img src="assets/img/icons/24.png" alt="" class="page-footer__phone-icon">
+				<span class="page-footer__phone-txt"><span class="page-footer__phone-red">+7 495</span>
+					432-07-77</span>
+			</a>
+			<div class="page-footer__work-time">Круглосуточный выезд автомеханика</div>
+			<div class="page-footer__location">
+				<img src="assets/img/icons/navigation.png" alt="" class="page-footer__location-icon">
+				<div class="page-footer__location-text">
+					<span class="page-footer__city">Москва,</span>
+					Магистральная, 46
+				</div>
+			</div>
+			<div class="page-footer__payment">
+				<img src="assets/img/cards.png" alt="" class="page-footer__payment-img">
+				<div class="page-footer__payment-desc">онлайн оплата по карте</div>
+			</div>
+		</div>
+		<div class="page-footer__bottom">
+			<div class="page-footer__copyright">2019 © Срочная техпомощь</div>
+			<div class="page-footer__metrika"><img src="assets/img/metr.jpg" alt=""></div>
+		</div>
+	</div>
+</footer>

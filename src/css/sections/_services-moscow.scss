@@ -1,0 +1,25 @@
+.services-moscow {
+  &__header {
+    font-size: vw(24px);
+    line-height: vw(24px);
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 18px;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px;
+  }
+
+  &__li {
+    padding: 5px;
+  }
+}

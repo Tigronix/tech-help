@@ -1,0 +1,53 @@
+.ad-services {
+  padding: vw(20px) vw(40px);
+  background: url(../img/fons_0.png) no-repeat center;
+  background-size: cover;
+  background-color: rgba(250, 245, 140, 0.9);
+  position: relative;
+  margin-bottom: vw(25px);
+
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(#EEE98B, .9);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 5;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -7px;
+  }
+
+  &__li {
+    padding: 7px;
+    width: calc(100% / 4);
+  }
+
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__img {
+    width: vw(20px);
+    height: vw(20px);
+    margin-right: vw(10px);
+  }
+
+  &__desc {
+    font-size: vw(16px);
+    line-height: vw(16px);
+    color: #333;
+  }
+}

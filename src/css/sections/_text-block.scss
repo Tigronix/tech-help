@@ -4,9 +4,18 @@
   align-items: center;
   margin-bottom: 66px;
 
+  @include mobile {
+    margin-bottom: 16px;
+    display: block;
+  }
+
   &__img {
     max-width: vw(120px);
     max-height: vw(120px);
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__desc {
@@ -15,5 +24,20 @@
     color: #57555C;
     flex: 1;
     padding-left: vw(22px);
+
+    br {
+      display: none;
+      margin: 11px 0;
+
+      @include mobile {
+        display: block;
+      }
+    }
+
+    @include mobile {
+      font-size: 13px;
+      line-height: 20px;
+      padding-left: 0;
+    }
   }
 }

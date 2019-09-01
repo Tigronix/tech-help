@@ -4,8 +4,17 @@
   align-items: center;
   margin-bottom: 7px;
 
+  @include mobile {
+    display: block;
+    margin-bottom: 35px;
+  }
+
   &__logo {
     width: vw(195px);
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__logo-img {
@@ -28,6 +37,12 @@
     margin-left: auto;
     padding: 0 vw(50px);
 
+    @include mobile {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
     @include slickArrows;
 
     .slick {
@@ -45,6 +60,14 @@
     display: flex!important;
     flex-wrap: wrap;
     align-items: center;
+
+    @include mobile {
+      display: none!important;
+
+      &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+        display: flex!important;
+      }
+    }
   }
 
   &__content {
@@ -56,6 +79,12 @@
     line-height: vw(96px);
     color: #535E8A;
     margin-right: vw(11px);
+
+    @include mobile {
+      font-size: 80px;
+      line-height: 96px;
+      margin-right: 11px;
+    }
   }
 
   &__title {
@@ -64,6 +93,11 @@
     line-height: vw(23px);
     color: #FF1F00;
     margin-bottom: 4px;
+
+    @include mobile {
+      font-size: 24px;
+      line-height: 23px;
+    }
   }
 
   &__title-txt {
@@ -74,5 +108,10 @@
     font-size: vw(18px);
     line-height: vw(18px);
     color: #535E8A;
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 16px;
+    }
   }
 }

@@ -5,6 +5,10 @@
   border-radius: 10px;
   $self: &;
 
+  @include mobile {
+    padding: 10px;
+  }
+
   &__header {
     display: flex;
     flex-wrap: wrap;
@@ -17,6 +21,12 @@
     height: vw(60px);
     margin-right: vw(14px);
     border-radius: 50%;
+
+    @include mobile {
+      width: 60px;
+      height: 60px;
+      margin-right: 14px;
+    }
   }
 
   &__ava-img {
@@ -27,6 +37,10 @@
 
   &__name-container {
     margin-right: vw(20px);
+
+    @include mobile {
+      margin-right: 0;
+    }
   }
 
   &__name {
@@ -37,10 +51,30 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
+    @include mobile {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &__location {
+    font-size: vw(14px);
+    line-height: vw(14px);
+    color: #57555c;
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 14px;
+    }
   }
 
   &__status {
     margin-left: vw(10px);
+
+    @include mobile {
+      margin-left: 14px;
+    }
   }
 
   &__status-icon {
@@ -50,9 +84,11 @@
     background: rgba(16, 241, 52, 0.39);
     position: relative;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    @include mobile {
+      width: 20px;
+      height: 20px;
+    }
 
     &:after {
       display: block;
@@ -61,13 +97,22 @@
       height: vw(12px);
       background: #10f134;
       border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      @include mobile {
+        width: 12px;
+        height: 12px;
+      }
     }
 
     &--busy {
-      background: rgba(#FF1F00, .39);
+      background: rgba(#ff1f00, 0.39);
 
       &:after {
-        background: #FF1F00;
+        background: #ff1f00;
       }
     }
   }
@@ -88,7 +133,7 @@
     text-align: center;
     opacity: 0;
     pointer-events: none;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
 
     #{$self}__status:hover & {
       opacity: 1;
@@ -97,7 +142,7 @@
 
     &:before {
       display: block;
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 100%;
@@ -108,7 +153,7 @@
 
     &:after {
       display: block;
-      content: '';
+      content: "";
       width: 32px;
       height: 14px;
       position: absolute;
@@ -123,10 +168,30 @@
 
   &__about-list {
     margin: vw(-5px);
+
+    @include mobile {
+      display: none;
+      max-width: 330px;
+      margin: -5px auto;
+    }
+
+    &--mobile {
+      display: none;
+      flex-wrap: wrap;
+      margin-bottom: calc(-5px + 16px);
+
+      @include mobile {
+        display: flex;
+      }
+    }
   }
 
   &__about-li {
     padding: vw(5px);
+
+    @include mobile {
+      width: calc(100% / 2);
+    }
   }
 
   &__about-item {
@@ -139,17 +204,42 @@
     width: vw(15px);
     height: vw(15px);
     margin-right: vw(6px);
+
+    @include mobile {
+      width: 15px;
+      height: 15px;
+      margin-right: 6px;
+    }
   }
 
   &__about-txt {
     font-size: vw(14px);
     line-height: vw(14px);
-    color: #57555C;
+    color: #57555c;
+
+    @include mobile {
+      font-size: 11px;
+      line-height: 11px;
+    }
   }
 
   &__info {
     margin-left: auto;
     text-align: right;
+
+    @include mobile {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+      text-align: center;
+      margin-bottom: 24px;
+
+      @include mobile {
+        display: block;
+      }
+    }
   }
 
   &__phone {
@@ -157,21 +247,49 @@
     font-size: vw(24px);
     line-height: vw(29px);
     font-weight: bold;
-    color: #FF1F00;
+    color: #ff1f00;
     text-decoration: none;
     margin-bottom: 4px;
+
+    @include mobile {
+      font-size: 24px;
+      line-height: 29px;
+    }
   }
 
   &__schedule {
     font-size: vw(14px);
     line-height: vw(14px);
     color: #999;
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 14px;
+    }
   }
 
   &__slider {
     margin-bottom: 15px;
 
+    @include mobile {
+      max-width: 323px;
+      margin: 0 auto;
+      margin-bottom: 15px;
+    }
+
     @include slickArrows;
+
+    .slick {
+      &-prev {
+        left: 0;
+        transform: translateX(-50%);
+      }
+
+      &-next {
+        right: 0;
+        transform: translateX(50%);
+      }
+    }
   }
 
   &__slide {
@@ -184,16 +302,24 @@
 
   &__services-list {
     margin-bottom: 16px;
+
+    @include mobile {
+      margin-bottom: 10px;
+    }
   }
 
   &__services-item {
     padding: vw(13px) 0;
-    border: 1px solid #EBEBEB;
+    border: 1px solid #ebebeb;
     border-width: 0px 0 1px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
+    @include mobile {
+      padding: 13px 0;
+    }
 
     #{$self}__services-li:first-child & {
       border-width: 1px 0;
@@ -203,12 +329,17 @@
   &__services-desc {
     font-size: vw(18px);
     line-height: vw(18px);
-    color: #0044BB;
+    color: #0044bb;
     text-decoration: none;
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 16px;
+    }
   }
 
   &__services-desc-txt {
-    border-bottom: 1px dashed #0044BB;
+    border-bottom: 1px dashed #0044bb;
   }
 
   &__services-price {
@@ -217,11 +348,20 @@
     color: #333;
     display: flex;
     align-items: baseline;
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 18px;
+    }
   }
 
   &__services-rouble {
     margin-left: 4px;
     width: vw(12px);
+
+    @include mobile {
+      width: 13px;
+    }
   }
 
   &__footer {
@@ -233,9 +373,15 @@
   &__all-services {
     font-size: vw(18px);
     line-height: vw(18px);
-    color: #0044BB;
+    color: #0044bb;
     font-weight: bold;
     margin-right: vw(18px);
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 16px;
+      margin-right: 10px;
+    }
   }
 
   &__rating {
@@ -248,12 +394,23 @@
     width: vw(30px);
     height: vw(30px);
     margin-right: vw(5px);
+
+    @include mobile {
+      width: 25px;
+      height: 25px;
+      margin-right: 5px;
+    }
   }
 
   &__rating-score {
     font-size: vw(24px);
     line-height: vw(29px);
-    color: #3C3A41;
+    color: #3c3a41;
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 
   &__reviews-number {
@@ -261,35 +418,67 @@
     font-size: vw(18px);
     line-height: vw(18px);
     font-weight: bold;
-    color: #0044BB;
+    color: #0044bb;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__payment {
     margin-left: vw(26px);
+
+    @include mobile {
+      margin-left: auto;
+    }
   }
 
   &__payment-img {
     width: vw(134px);
     height: auto;
     margin-bottom: 7px;
+
+    @include mobile {
+      width: 120px;
+      margin-bottom: 6px;
+    }
   }
 
   &__payment-txt {
     font-size: vw(12px);
     line-height: vw(12px);
     color: #999;
+
+    @include mobile {
+      font-size: 10px;
+      line-height: 10px;
+    }
   }
 
   &__call {
     margin-left: auto;
-    background: #FFDB4D;
+    background: #ffdb4d;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: vw(45px);
+
+    @include mobile {
+      border-radius: 45px;
+      margin: 0;
+      width: 100%;
+      margin-top: 14px;
+      // max-width: 375px;
+    }
 
     .btn {
       &__icon {
         font-size: vw(20px);
         margin-right: vw(10px);
+
+        @include mobile {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+        }
       }
     }
   }

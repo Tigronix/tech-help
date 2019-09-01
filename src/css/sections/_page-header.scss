@@ -1,22 +1,41 @@
 .page-header {
+  $self: &;
   background: #FFCC33;
   box-shadow: 0px 4px 4px rgba(75, 75, 75, 0.25);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  padding: 15px 0;
+  padding: vw(15px) 0;
   z-index: 999;
-  margin-bottom: 15px;
+  margin-bottom: vw(15px);
+
+  @include mobile {
+    padding: 0;
+    background: #F79E1B;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1000;
+  }
 
   &__container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
+    @include mobile {
+      padding-top: 13px;
+      padding-bottom: 13px;
+    }
   }
 
   &__logo {
     display: flex;
     flex-wrap: wrap;
     text-decoration: none;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__logo-img {
@@ -51,23 +70,43 @@
     flex-wrap: wrap;
     align-items: center;
     margin-left: 3.43vw;
-    margin-right: 4.68vw
+    margin-right: 4.68vw;
+
+    @include mobile {
+      margin: 0;
+      order: 0;
+    }
   }
 
   &__location-img {
     width: 1.04vw;
     height: 1.04vw;
     margin-right: 0.46vw;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__location-desc {
     font-size: 0.93vw;
     line-height: 0.93vw;
     border-bottom: 1px dashed #333;
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 14px;
+      color: #fff;
+      border-bottom: none;
+    }
   }
 
   &__contacts {
     margin-left: auto;
+
+    @include mobile {
+      order: 1;
+    }
   }
 
   &__contacts-phone {
@@ -75,12 +114,20 @@
     align-items: center;
     text-decoration: none;
     margin-bottom: 3px;
+
+    @include mobile {
+      margin-bottom: 0;
+    }
   }
 
   &__contacts-icon {
     width: 2.08vw;
     height: 2.08vw;
     margin-right: 0.93vw;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__phone-txt {
@@ -89,9 +136,20 @@
     line-height: 1.9vw;
     font-weight: bold;
 
+    @include mobile {
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: 500;
+      @include helvetica;
+    }
+
     &--start {
       color: #FF1F00;
       font-weight: normal;
+
+      @include mobile {
+        color: #fff;
+      }
     }
 
     &--end {
@@ -102,5 +160,97 @@
   &__contacts-desc {
     font-size:   0.84vw;
     line-height: 0.84vw;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__mobile-info {
+    width: 100%;
+    background: #FFCC33;
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__mobile-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 9px;
+    padding-bottom: 17px;
+  }
+
+  &__btn-menu {
+    width: 25px;
+    height: 25px;
+    position: relative;
+  }
+
+  &__menu-img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &--open {
+      #{$self}__btn-menu.active & {
+        display: none;
+      }
+    }
+
+    &--close {
+      display: none;
+
+      #{$self}__btn-menu.active & {
+        display: block;
+      }
+    }
+  }
+
+  &__mobile-logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__mobile-img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin-right: 10px;
+  }
+
+  &__mobile-logo {
+    text-decoration: none;
+  }
+
+  &__mobile-logo-header {
+    @include avant;
+    font-size: 28px;
+    line-height: 33px;
+    color: #FF1F00;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  &__mobile-logo-header-txt {
+    border-bottom: 1px solid #FF1F00;
+  }
+
+  &__mobile-logo-desc {
+    font-size: 11px;
+    line-height: 11px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  &__mobile-share {
+    width: 25px;
+    height: 25px;
   }
 }

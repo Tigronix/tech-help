@@ -15,11 +15,10 @@
 	<body>
 		<div class="site-wrapper">
 			{% include 'includes/page-header.twig' %}
-			<!-- CONTENT -->
 			<main class="page-main">
 				{% block page %}{% endblock %}
 			</main>
-			<!-- /CONTENT -->
+			{% include 'includes/page-footer.twig' %}
 		</div>
 
 		<script src="./assets/js/vendor.js"></script>
