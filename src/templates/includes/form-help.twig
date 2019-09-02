@@ -1,0 +1,99 @@
+<form action="" class="form-help js-form-help">
+  <ul class="form-help__list">
+    <li class="form-help__li js-form-step-1">
+      <div class="form-help__item">
+        <img src="assets/img/sellout-guy.png" alt="" class="form-help__man">
+        <div class="form-help__info">
+          <div class="form-help__header"><span class="form-help__header-txt">КАКОЙ У ВАС АВТОМОБИЛЬ?</span></div>
+          <div class="form-help__desc">Выберите марку и модель вашего автомобиля</div>
+        </div>
+        <ul class="form-help__form-list">
+          <li class="form-help__form-li">
+            {% include 'select.twig' with {
+              id: 'brand',
+              mod: 'form-elem--avto form-elem--brand',
+              selectList: {
+                item0: {
+                  txt: 'Марка автомобиля',
+                  value: 'None'
+                },
+                item1: {
+                  txt: 'BMW',
+                  value: 'BMW',
+                },
+                item2: {
+                  txt: 'Mazda',
+                  value: 'Mazda'
+                },
+                item3: {
+                  txt: 'Toyota',
+                  value: 'Toyota'
+                },
+              }
+            } %}
+          </li>
+          <li class="form-help__form-li">
+            {% include 'select.twig' with {
+              id: 'model',
+              mod: 'form-elem--avto form-elem--model',
+              disabled: 'disabled',
+              selectList: {
+                item0: {
+                  txt: 'Модель',
+                  value: 'None'
+                },
+                item1: {
+                  txt: 'x1',
+                  value: 'x1',
+                  group: 'BMW'
+                },
+                item2: {
+                  txt: 'x5',
+                  value: 'x5',
+                  group: 'BMW'
+                },
+                item3: {
+                  txt: 'x6',
+                  value: 'x6',
+                  group: 'BMW'
+                },
+                item4: {
+                  txt: 'mx-5',
+                  value: 'mx-5',
+                  group: 'Mazda'
+                },
+                item5: {
+                  txt: '3',
+                  value: '3',
+                  group: 'Mazda'
+                },
+                item6: {
+                  txt: 'rx8',
+                  value: 'rx8',
+                  group: 'Mazda'
+                },
+                item7: {
+                  txt: 'camri',
+                  value: 'camri',
+                  group: 'Toyota'
+                },
+                item8: {
+                  txt: '4Runner',
+                  value: '4Runner',
+                  group: 'Toyota'
+                },
+                item9: {
+                  txt: 'Avalon',
+                  value: 'Avalon',
+                  group: 'Toyota'
+                },
+              }
+            } %}
+          </li>
+        </ul>
+        <div class="js-total-text"></div>
+        <button type="button" class="btn form-help__submit disabled">Продолжить</button>
+      </div>
+    </li>
+  </ul>
+</form>

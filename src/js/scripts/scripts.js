@@ -139,6 +139,73 @@
 		});
 	};
 
+	const avtoSelect = function(){
+		const selectBrand = document.getElementById('brand');
+		const selectModel = document.getElementById('model');
+		const totalText = {};
+		const infoSelecor = document.querySelector('.js-total-text');
+
+		const refreshOrderStatus = function() {
+			const textNodes = infoSelecor.querySelectorAll('span');
+
+			textNodes.forEach(function(textNode){
+				textNode.remove();
+			});
+
+			infoSelecor.insertAdjacentHTML('afterbegin', `<span>${totalText.total}</span>`);
+		};
+
+		const resetModelSelect = function(modelOptions){
+			selectModel.selectedIndex = 0;
+			selectModel.classList.remove('checked');
+		};
+
+		const closeOptions = function(modelOptions){
+			modelOptions.forEach(function(modelOption){
+				modelOption.classList.add('hide');
+				modelOption.classList.remove('matched');
+			});
+		};
+
+		const openOptions = function(modelOption){
+			modelOption.classList.remove('hide');
+			modelOption.classList.add('matched');
+		};
+
+		selectBrand.addEventListener('change', function(){
+			const brandValue = selectBrand.options[selectBrand.selectedIndex].value;
+			const brandText = selectBrand.options[selectBrand.selectedIndex].text;
+			const modelOptions = selectModel.querySelectorAll('option');
+
+			totalText.brand = brandText;
+
+			selectBrand.classList.add('checked');
+
+			resetModelSelect(modelOptions);
+			closeOptions(modelOptions);
+
+			modelOptions.forEach(function(modelOption){
+				const modelGroup = modelOption.getAttribute('data-group');
+				const isMatched = modelGroup === brandValue;
+
+				if(isMatched){
+					openOptions(modelOption);
+				}
+			});
+		});
+
+		selectModel.addEventListener('change', function(){
+			const modelText = selectModel.options[selectModel.selectedIndex].text;
+
+			selectModel.classList.add('checked');
+			totalText.model = modelText;
+
+			totalText.total = `${totalText.brand} ${totalText.model}`;
+
+			refreshOrderStatus();
+		});
+	};
+
 	// sliders
 	personCardSlider();
 	advantagesSlider();
@@ -149,4 +216,5 @@
 	phoneMask();
 	checkboxLink();
 	menu();
+	avtoSelect();
 })();

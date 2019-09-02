@@ -539,10 +539,24 @@ ul {
   margin-bottom: 15px;
 }
 
+@media screen and (max-width: 767px) {
+  .h1 {
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+  }
+}
+
 p {
   font-size: 16px;
   line-height: 25px;
   color: #57555C;
+}
+
+@media screen and (max-width: 767px) {
+  p {
+    line-height: 19px;
+  }
 }
 
 /* Slider */
@@ -2757,6 +2771,30 @@ body.compensate-for-scrollbar {
   color: #999;
 }
 
+.form-elem--avto select {
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  -webkit-transition: border-color .3s;
+  -o-transition: border-color .3s;
+  transition: border-color .3s;
+}
+
+.form-elem--avto select.checked {
+  border-color: #35B702;
+}
+
+.form-elem--model option {
+  display: none;
+}
+
+.form-elem--model option.hide {
+  display: none;
+}
+
+.form-elem--model option.matched {
+  display: block;
+}
+
 .page-header {
   background: #FFCC33;
   -webkit-box-shadow: 0px 4px 4px rgba(75, 75, 75, 0.25);
@@ -4761,6 +4799,14 @@ body.compensate-for-scrollbar {
   background-color: rgba(250, 245, 140, 0.9);
   position: relative;
   margin-bottom: 1.30208vw;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .ad-services {
+    padding: 10px 20px;
+    margin-bottom: 26px;
+  }
 }
 
 .ad-services:before {
@@ -4793,6 +4839,12 @@ body.compensate-for-scrollbar {
   width: calc(100% / 4);
 }
 
+@media screen and (max-width: 767px) {
+  .ad-services__li {
+    width: 100%;
+  }
+}
+
 .ad-services__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4804,16 +4856,41 @@ body.compensate-for-scrollbar {
   align-items: center;
 }
 
+@media screen and (max-width: 767px) {
+  .ad-services__item {
+    position: relative;
+    padding-left: 30px;
+  }
+}
+
 .ad-services__img {
   width: 1.04167vw;
   height: 1.04167vw;
   margin-right: 0.52083vw;
 }
 
+@media screen and (max-width: 767px) {
+  .ad-services__img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
 .ad-services__desc {
   font-size: 0.83333vw;
   line-height: 0.83333vw;
   color: #333;
+}
+
+@media screen and (max-width: 767px) {
+  .ad-services__desc {
+    font-size: 16px;
+    line-height: 16px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

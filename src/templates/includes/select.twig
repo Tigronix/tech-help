@@ -1,7 +1,7 @@
-<div class="form-elem__select-wrap js-select-wrap">
-  <select class="form-elem form-elem--select js-select">
+<div class="form-elem__select-wrap js-select-wrap {{mod}}">
+  <select class="form-elem form-elem--select js-select {{disabled}}" id="{{id}}">
     {% for item in selectList %}
-      <option value="{{item.value}}">{{item.txt}}</option>
+      <option {% if item.selected %}selected{% endif %} data-group="{{item.group}}" value="{{item.value}}">{{item.txt}}</option>
     {% endfor %}
   </select>
 </div>

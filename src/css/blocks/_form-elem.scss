@@ -36,6 +36,7 @@
     }
   }
 
+  // select
   &--select {
     padding: vw(15px) vw(20px) vw(15px) vw(10px);
     -webkit-appearance: none;
@@ -58,5 +59,31 @@
 
   &.changed {
     color: #999;
+  }
+
+  &--avto {
+    select {
+      border: 2px solid #ccc;
+      border-radius: 2px;
+      transition: border-color .3s;
+
+      &.checked {
+        border-color: #35B702;
+      }
+    }
+  }
+
+  &--model {
+    option {
+      display: none;
+
+      &.hide {
+        display: none;
+      }
+
+      &.matched {
+        display: block;
+      }
+    }
   }
 }

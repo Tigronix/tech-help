@@ -149,6 +149,73 @@ var APP = {
 		});
 	};
 
+	var avtoSelect = function avtoSelect() {
+		var selectBrand = document.getElementById('brand');
+		var selectModel = document.getElementById('model');
+		var totalText = {};
+		var infoSelecor = document.querySelector('.js-total-text');
+
+		var refreshOrderStatus = function refreshOrderStatus() {
+			var textNodes = infoSelecor.querySelectorAll('span');
+
+			textNodes.forEach(function (textNode) {
+				textNode.remove();
+			});
+
+			infoSelecor.insertAdjacentHTML('afterbegin', '<span>' + totalText.total + '</span>');
+		};
+
+		var resetModelSelect = function resetModelSelect(modelOptions) {
+			selectModel.selectedIndex = 0;
+			selectModel.classList.remove('checked');
+		};
+
+		var closeOptions = function closeOptions(modelOptions) {
+			modelOptions.forEach(function (modelOption) {
+				modelOption.classList.add('hide');
+				modelOption.classList.remove('matched');
+			});
+		};
+
+		var openOptions = function openOptions(modelOption) {
+			modelOption.classList.remove('hide');
+			modelOption.classList.add('matched');
+		};
+
+		selectBrand.addEventListener('change', function () {
+			var brandValue = selectBrand.options[selectBrand.selectedIndex].value;
+			var brandText = selectBrand.options[selectBrand.selectedIndex].text;
+			var modelOptions = selectModel.querySelectorAll('option');
+
+			totalText.brand = brandText;
+
+			selectBrand.classList.add('checked');
+
+			resetModelSelect(modelOptions);
+			closeOptions(modelOptions);
+
+			modelOptions.forEach(function (modelOption) {
+				var modelGroup = modelOption.getAttribute('data-group');
+				var isMatched = modelGroup === brandValue;
+
+				if (isMatched) {
+					openOptions(modelOption);
+				}
+			});
+		});
+
+		selectModel.addEventListener('change', function () {
+			var modelText = selectModel.options[selectModel.selectedIndex].text;
+
+			selectModel.classList.add('checked');
+			totalText.model = modelText;
+
+			totalText.total = totalText.brand + ' ' + totalText.model;
+
+			refreshOrderStatus();
+		});
+	};
+
 	// sliders
 	personCardSlider();
 	advantagesSlider();
@@ -159,5 +226,6 @@ var APP = {
 	phoneMask();
 	checkboxLink();
 	menu();
+	avtoSelect();
 })();
 //# sourceMappingURL=main.js.map

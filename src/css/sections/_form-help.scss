@@ -1,0 +1,54 @@
+.form-help {
+  padding: vw(13px) vw(79px);
+
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__man {
+    width: vw(179px);
+    height: auto;
+    transform: translateY(vw(13px));
+    margin-right: vw(18px);
+  }
+
+  &__info {
+
+  }
+
+  &__header {
+    font-size: vw(28px);
+    line-height: vw(30px);
+    font-weight: bold;
+    margin-bottom: vw(12px);
+  }
+
+  &__header-txt {
+    border-bottom: 1px solid #000;
+  }
+
+  &__desc {
+    font-size: vw(18px);
+    line-height: vw(20px;)
+  }
+
+  &__form-list {
+    flex: 1;
+    padding-left: vw(40px);
+    padding-right: vw(20px);
+    display: flex;
+    flex-wrap: wrap;
+    margin: vw(-10px);
+  }
+
+  &__form-li {
+    width: calc(100% / 2);
+    padding: vw(10px);
+  }
+
+  &__submit {
+    width: vw(300px);
+  }
+}

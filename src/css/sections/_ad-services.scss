@@ -5,6 +5,12 @@
   background-color: rgba(250, 245, 140, 0.9);
   position: relative;
   margin-bottom: vw(25px);
+  margin-top: 10px;
+
+  @include mobile {
+    padding: 10px 20px;
+    margin-bottom: 26px;
+  }
 
   &:before {
     display: block;
@@ -31,23 +37,46 @@
   &__li {
     padding: 7px;
     width: calc(100% / 4);
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__item {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
+    @include mobile {
+      position: relative;
+      padding-left: 30px;
+    }
   }
 
   &__img {
     width: vw(20px);
     height: vw(20px);
     margin-right: vw(10px);
+
+    @include mobile {
+      width: 20px;
+      height: 20px;
+      margin-right: 0px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
   }
 
   &__desc {
     font-size: vw(16px);
     line-height: vw(16px);
     color: #333;
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 16px;
+    }
   }
 }
