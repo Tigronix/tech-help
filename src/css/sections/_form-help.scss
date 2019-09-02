@@ -1,5 +1,24 @@
 .form-help {
   padding: vw(13px) vw(79px);
+  background: rgba(236, 241, 247, 0.9) url(../img/fons_0.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(#E1E6EB, .9);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 5;
+  }
 
   &__item {
     display: flex;
@@ -15,7 +34,7 @@
   }
 
   &__info {
-
+    width: vw(230px);
   }
 
   &__header {
@@ -31,7 +50,7 @@
 
   &__desc {
     font-size: vw(18px);
-    line-height: vw(20px;)
+    line-height: vw(20px);
   }
 
   &__form-list {
@@ -44,11 +63,23 @@
   }
 
   &__form-li {
-    width: calc(100% / 2);
+    width: 100%;
     padding: vw(10px);
+
+    &--50 {
+      width: 50%;
+    }
   }
 
   &__submit {
     width: vw(300px);
+  }
+
+  &__steps {
+    display: none;
+
+    &:first-child {
+      display: block;
+    }
   }
 }

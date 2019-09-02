@@ -176,10 +176,11 @@
 			const brandValue = selectBrand.options[selectBrand.selectedIndex].value;
 			const brandText = selectBrand.options[selectBrand.selectedIndex].text;
 			const modelOptions = selectModel.querySelectorAll('option');
+			const selectWrap = selectBrand.closest('.form-elem__wrap');
 
 			totalText.brand = brandText;
 
-			selectBrand.classList.add('checked');
+			selectWrap.classList.add('checked');
 
 			resetModelSelect(modelOptions);
 			closeOptions(modelOptions);
@@ -196,6 +197,7 @@
 
 		selectModel.addEventListener('change', function(){
 			const modelText = selectModel.options[selectModel.selectedIndex].text;
+			// const selectWrap = selectModel.closest('.se')
 
 			selectModel.classList.add('checked');
 			totalText.model = modelText;

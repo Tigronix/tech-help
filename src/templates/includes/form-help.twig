@@ -1,15 +1,20 @@
 <form action="" class="form-help js-form-help">
-  <ul class="form-help__list">
-    <li class="form-help__li js-form-step-1">
-      <div class="form-help__item">
-        <img src="assets/img/sellout-guy.png" alt="" class="form-help__man">
-        <div class="form-help__info">
-          <div class="form-help__header"><span class="form-help__header-txt">КАКОЙ У ВАС АВТОМОБИЛЬ?</span></div>
-          <div class="form-help__desc">Выберите марку и модель вашего автомобиля</div>
-        </div>
-        <ul class="form-help__form-list">
-          <li class="form-help__form-li">
-            {% include 'select.twig' with {
+	<div class="form-help__container">
+		<div class="form-help__item">
+			<img src="assets/img/sellout-guy.png" alt="" class="form-help__man">
+			<div class="form-help__info">
+				<div class="form-help__header">
+					<span class="form-help__header-txt">
+						<span class="form-help__steps js-steps-1">КАКОЙ У ВАС АВТОМОБИЛЬ?</span>
+						<span class="form-help__steps js-steps-2">ЧТО НУЖНО СДЕЛАТЬ?</span>
+						<span class="form-help__steps js-steps-3">ВАШИ КОНТАКТЫ:</span>
+					</span>
+				</div>
+				<div class="form-help__desc">Выберите марку и модель вашего автомобиля</div>
+			</div>
+			<ul class="form-help__form-list">
+				<li class="form-help__form-li form-help__form-li--50 js-steps-1">
+					{% include 'select.twig' with {
               id: 'brand',
               mod: 'form-elem--avto form-elem--brand',
               selectList: {
@@ -31,9 +36,9 @@
                 },
               }
             } %}
-          </li>
-          <li class="form-help__form-li">
-            {% include 'select.twig' with {
+				</li>
+				<li class="form-help__form-li form-help__form-li--50 js-steps-1">
+					{% include 'select.twig' with {
               id: 'model',
               mod: 'form-elem--avto form-elem--model',
               disabled: 'disabled',
@@ -89,11 +94,53 @@
                 },
               }
             } %}
-          </li>
-        </ul>
-        <div class="js-total-text"></div>
-        <button type="button" class="btn form-help__submit disabled">Продолжить</button>
-      </div>
-    </li>
-  </ul>
+				</li>
+				<li class="form-help__form-li js-steps-2">
+					{% include 'select.twig' with {
+              id: 'malfunction',
+              mod: 'form-elem--avto form-elem--malfunction',
+              selectList: {
+                item0: {
+                  txt: 'Выберите неисправность',
+                  value: 'None'
+                },
+                item1: {
+                  txt: 'Замена аккмулятора',
+                  value: 'repair-acum',
+                },
+                item2: {
+                  txt: 'Слив топлива',
+                  value: 'fuel',
+                },
+								item3: {
+									txt: 'Вскрытие автомобиля',
+									value: 'open-car'
+								}
+              }
+            } %}
+				</li>
+				<li class="form-help__form-li form-help__li--50">
+					{% include 'input.twig' with {
+						placeholder: 'Имя',
+						mod: 'form-elem--avto'
+					} %}
+				</li>
+				<li class="form-help__form-li form-help__li--50">
+					{% include 'input.twig' with {
+						placeholder: 'Телефон для связи',
+						type: 'phone',
+						mod: 'form-elem--avto'
+					} %}
+				</li>
+				<li class="form-help__form-li">
+					{% include 'textarea.twig' with {
+						placeholder: 'Комментарий',
+						mod: 'form-elem--avto'
+					} %}
+				</li>
+			</ul>
+			<div class="js-total-text"></div>
+			<button type="button" class="btn form-help__submit disabled">Продолжить</button>
+		</div>
+	</div>
 </form>

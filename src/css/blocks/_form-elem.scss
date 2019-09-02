@@ -62,15 +62,14 @@
   }
 
   &--avto {
-    select {
       border: 2px solid #ccc;
       border-radius: 2px;
       transition: border-color .3s;
 
       &.checked {
         border-color: #35B702;
+        background: #fff url(../img/icons/check-mark.png) no-repeat left vw(10px) center;
       }
-    }
   }
 
   &--model {
@@ -84,6 +83,14 @@
       &.matched {
         display: block;
       }
+    }
+  }
+
+  &__wrap {
+    position: relative;
+
+    & > * {
+      padding-left: vw(30px);
     }
   }
 }

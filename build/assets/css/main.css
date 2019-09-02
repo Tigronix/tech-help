@@ -2771,7 +2771,7 @@ body.compensate-for-scrollbar {
   color: #999;
 }
 
-.form-elem--avto select {
+.form-elem--avto {
   border: 2px solid #ccc;
   border-radius: 2px;
   -webkit-transition: border-color .3s;
@@ -2779,8 +2779,9 @@ body.compensate-for-scrollbar {
   transition: border-color .3s;
 }
 
-.form-elem--avto select.checked {
+.form-elem--avto.checked {
   border-color: #35B702;
+  background: #fff url(../img/icons/check-mark.png) no-repeat left 0.52083vw center;
 }
 
 .form-elem--model option {
@@ -2793,6 +2794,14 @@ body.compensate-for-scrollbar {
 
 .form-elem--model option.matched {
   display: block;
+}
+
+.form-elem__wrap {
+  position: relative;
+}
+
+.form-elem__wrap > * {
+  padding-left: 1.5625vw;
 }
 
 .page-header {
@@ -4891,6 +4900,104 @@ body.compensate-for-scrollbar {
     font-size: 16px;
     line-height: 16px;
   }
+}
+
+.form-help {
+  padding: 0.67708vw 4.11458vw;
+  background: rgba(236, 241, 247, 0.9) url(../img/fons_0.png) no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.form-help:before {
+  display: block;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(225, 230, 235, 0.9);
+}
+
+.form-help__container {
+  position: relative;
+  z-index: 5;
+}
+
+.form-help__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.form-help__man {
+  width: 9.32292vw;
+  height: auto;
+  -webkit-transform: translateY(0.67708vw);
+  -ms-transform: translateY(0.67708vw);
+  transform: translateY(0.67708vw);
+  margin-right: 0.9375vw;
+}
+
+.form-help__info {
+  width: 11.97917vw;
+}
+
+.form-help__header {
+  font-size: 1.45833vw;
+  line-height: 1.5625vw;
+  font-weight: bold;
+  margin-bottom: 0.625vw;
+}
+
+.form-help__header-txt {
+  border-bottom: 1px solid #000;
+}
+
+.form-help__desc {
+  font-size: 0.9375vw;
+  line-height: 1.04167vw;
+}
+
+.form-help__form-list {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding-left: 2.08333vw;
+  padding-right: 1.04167vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: -0.52083vw;
+}
+
+.form-help__form-li {
+  width: 100%;
+  padding: 0.52083vw;
+}
+
+.form-help__form-li--50 {
+  width: 50%;
+}
+
+.form-help__submit {
+  width: 15.625vw;
+}
+
+.form-help__steps {
+  display: none;
+}
+
+.form-help__steps:first-child {
+  display: block;
 }
 
 /*# sourceMappingURL=main.css.map */
