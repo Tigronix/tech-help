@@ -16,7 +16,7 @@
 
 <body>
     <div class="site-wrapper">
-        <header class="page-header">
+        <header class="page-header js-header">
             <div class="container page-header__container">
                 <a href="links.html" class="page-header__logo">
                     <img src="assets/img/logo.png" alt="" class="page-header__logo-img">
@@ -30,7 +30,7 @@
                     <div class="page-header__location-desc">Москва</div>
                 </div>
 
-                <nav class="navigation ">
+                <nav class="navigation page-header__navigation">
                     <ul class="navigation__list">
 
                         <li class="navigation__li">
@@ -63,6 +63,14 @@
 
                     </ul>
                 </nav>
+                <form class="search page-header__search">
+                    <div class="search__input-box">
+                        <input type="search" class="search__input" placeholder="Например замена аккумулятора BMW 5">
+                        <img class="search__icon" src="assets/img/icons/search.png" alt="">
+                    </div>
+                    <button type="submit" class="search__submit">Поиск</button>
+                </form>
+
                 <div class="page-header__contacts">
                     <a href="tel:+74954320777" class="page-header__contacts-phone">
                         <img src="assets/img/icons/24.png" alt="" class="page-header__contacts-icon">

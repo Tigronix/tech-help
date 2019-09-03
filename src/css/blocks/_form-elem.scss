@@ -8,7 +8,7 @@
   border-radius: 3px;
   border: none;
 
-  @include mobile {
+  @include tablet {
     font-size: 18px;
     line-height: 18px;
     padding: 16px 20px;
@@ -19,7 +19,7 @@
     resize: vertical;
     padding: vw(16px);
 
-    @include mobile {
+    @include tablet {
       padding: 16px;
       min-height: 82px;
     }
@@ -30,7 +30,7 @@
     background: #fff url(../img/icons/chevron-bot.png) no-repeat right vw(10px) center;
     background-size: vw(15px) vw(15px);
 
-    @include mobile {
+    @include tablet {
       background-size: 15px 15px;
       background-position: right 10px center;
     }
@@ -44,7 +44,7 @@
     background: transparent;
     color: rgba(#999, .5);
 
-    @include mobile {
+    @include tablet {
       padding: 15px 20px 15px 10px;
     }
 
@@ -69,6 +69,10 @@
       &.checked {
         border-color: #35B702;
         background: #fff url(../img/icons/check-mark.png) no-repeat left vw(10px) center;
+
+        @include tablet {
+          background-position: left 10px center;
+        }
       }
   }
 
@@ -91,6 +95,10 @@
 
     & > * {
       padding-left: vw(30px);
+
+      @include tablet {
+        padding-left: 30px;
+      }
     }
   }
 }

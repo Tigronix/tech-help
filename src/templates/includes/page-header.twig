@@ -1,4 +1,4 @@
-<header class="page-header">
+<header class="page-header js-header">
 	<div class="container page-header__container">
 		<a href="links.html" class="page-header__logo">
 			<img src="assets/img/logo.png" alt="" class="page-header__logo-img">
@@ -11,7 +11,12 @@
 			<img src="assets/img/icons/navigation.png" alt="" class="page-header__location-img">
 			<div class="page-header__location-desc">Москва</div>
 		</div>
-		{% include 'navigation.twig' %}
+		{% include 'navigation.twig' with {
+			mod: 'page-header__navigation'
+		}  %}
+		{% include 'search.twig' with {
+			mod: 'page-header__search'
+		} %}
 		<div class="page-header__contacts">
 			<a href="tel:+74954320777" class="page-header__contacts-phone">
 				<img src="assets/img/icons/24.png" alt="" class="page-header__contacts-icon">

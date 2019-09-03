@@ -6,6 +6,9 @@
   }
 
   &__container {
+    display: flex;
+    flex-wrap: wrap;
+    
     &:after {
       display: block;
       content: '';
@@ -14,9 +17,9 @@
   }
 
   &__content {
-    float: left;
     width: calc(100% - 14.58vw);
     padding-left: 20px;
+    order: 1;
 
     @include mobile {
       padding-left: 0;

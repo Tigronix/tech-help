@@ -4,12 +4,25 @@
   color: #3C3A41;
   font-weight: 500;
 
+  @include tablet {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
   &.js-steps-2 {
     position: absolute;
     top: vw(-15px);
+
+    @include tablet {
+      top: -20px;
+    }
   }
 
   &.js-steps-3 {
     margin-top: vw(10px);
+
+    @include tablet {
+      margin-top: 10px;
+    }
   }
 }

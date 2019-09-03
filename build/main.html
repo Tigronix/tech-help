@@ -16,7 +16,7 @@
 
 <body>
     <div class="site-wrapper">
-        <header class="page-header">
+        <header class="page-header js-header">
             <div class="container page-header__container">
                 <a href="links.html" class="page-header__logo">
                     <img src="assets/img/logo.png" alt="" class="page-header__logo-img">
@@ -30,7 +30,7 @@
                     <div class="page-header__location-desc">Москва</div>
                 </div>
 
-                <nav class="navigation ">
+                <nav class="navigation page-header__navigation">
                     <ul class="navigation__list">
 
                         <li class="navigation__li">
@@ -63,6 +63,14 @@
 
                     </ul>
                 </nav>
+                <form class="search page-header__search">
+                    <div class="search__input-box">
+                        <input type="search" class="search__input" placeholder="Например замена аккумулятора BMW 5">
+                        <img class="search__icon" src="assets/img/icons/search.png" alt="">
+                    </div>
+                    <button type="submit" class="search__submit">Поиск</button>
+                </form>
+
                 <div class="page-header__contacts">
                     <a href="tel:+74954320777" class="page-header__contacts-phone">
                         <img src="assets/img/icons/24.png" alt="" class="page-header__contacts-icon">
@@ -98,350 +106,15 @@
 
             <main class="page-main">
                 <div class="container page-main__container">
-
-
-                    <aside class="aside js-aside">
-                        <ul class="aside__list">
-
-                            <li class="aside__li">
-                                <div class="aside__item">
-                                    <div class="aside__header">
-                                        <img src="assets/img/icons/timing-belt.png" alt="" class="aside__header-img">
-                                        <div class="aside__header-txt">Выездная техпомощь</div>
-                                    </div>
-                                    <div class="aside__content">
-                                        <ul class="aside__checkbox-list">
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input" checked="checked">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена аккумулятора</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Слив топлива</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Вскрытие автомобиля</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Откручивание болтов</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Подвоз топлива</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Прикурить автомобиль</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="aside__li">
-                                <div class="aside__item">
-                                    <div class="aside__header">
-                                        <img src="assets/img/icons/battery.png" alt="" class="aside__header-img">
-                                        <div class="aside__header-txt">Выездной автоэлектрик</div>
-                                    </div>
-                                    <div class="aside__content">
-                                        <ul class="aside__checkbox-list">
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена генератора</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена ремня водяного насоса</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена гидроусилителя</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена датчика температуры</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена троса сцепления</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена гидроусилителя</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Слив топлива</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Вскрытие автомобиля</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Откручивание болтов</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Подвоз топлива</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Прикурить автомобиль</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="aside__li">
-                                <div class="aside__item">
-                                    <div class="aside__header">
-                                        <img src="assets/img/icons/suspension.png" alt="" class="aside__header-img">
-                                        <div class="aside__header-txt">Мобильный шиномонтаж</div>
-                                    </div>
-                                    <div class="aside__content">
-                                        <ul class="aside__checkbox-list">
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Заблокировался замок зажигания</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Отключение иммобилайзера</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Поиск утечек тока в автомобиле</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Отключение сигнализации</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Компьютерная диагностика</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена предохранителей</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена гидроусилителя</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена датчика температуры</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                            <li class="aside__checkbox-li">
-                                                <div class="aside__checkbox-item">
-                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
-                                                        <input type="checkbox" class="checkbox__input">
-                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
-                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена троса сцепления</span></span>
-                                                    </label>
-
-                                                </div>
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </aside>
-
                     <div class="page-main__content">
-                        <form class="search">
+                        <form class="search ">
                             <div class="search__input-box">
                                 <input type="search" class="search__input" placeholder="Например замена аккумулятора BMW 5">
                                 <img class="search__icon" src="assets/img/icons/search.png" alt="">
                             </div>
                             <button type="submit" class="search__submit">Поиск</button>
                         </form>
+
 
 
                         <section class="popular-cars ">
@@ -2175,6 +1848,342 @@
                         </section>
 
                     </div>
+
+
+                    <aside class="aside js-aside">
+                        <ul class="aside__list">
+
+                            <li class="aside__li">
+                                <div class="aside__item">
+                                    <div class="aside__header">
+                                        <img src="assets/img/icons/timing-belt.png" alt="" class="aside__header-img">
+                                        <div class="aside__header-txt">Выездная техпомощь</div>
+                                    </div>
+                                    <div class="aside__content">
+                                        <ul class="aside__checkbox-list">
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input" checked="checked">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена аккумулятора</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Слив топлива</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Вскрытие автомобиля</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Откручивание болтов</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Подвоз топлива</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Прикурить автомобиль</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="aside__li">
+                                <div class="aside__item">
+                                    <div class="aside__header">
+                                        <img src="assets/img/icons/battery.png" alt="" class="aside__header-img">
+                                        <div class="aside__header-txt">Выездной автоэлектрик</div>
+                                    </div>
+                                    <div class="aside__content">
+                                        <ul class="aside__checkbox-list">
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена генератора</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена ремня водяного насоса</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена гидроусилителя</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена датчика температуры</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена троса сцепления</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена гидроусилителя</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Слив топлива</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Вскрытие автомобиля</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Откручивание болтов</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Подвоз топлива</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Прикурить автомобиль</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="aside__li">
+                                <div class="aside__item">
+                                    <div class="aside__header">
+                                        <img src="assets/img/icons/suspension.png" alt="" class="aside__header-img">
+                                        <div class="aside__header-txt">Мобильный шиномонтаж</div>
+                                    </div>
+                                    <div class="aside__content">
+                                        <ul class="aside__checkbox-list">
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Заблокировался замок зажигания</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Отключение иммобилайзера</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Поиск утечек тока в автомобиле</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Отключение сигнализации</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Компьютерная диагностика</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена предохранителей</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена гидроусилителя</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена датчика температуры</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="aside__checkbox-li">
+                                                <div class="aside__checkbox-item">
+                                                    <label class="checkbox js-checkbox-link" data-href="https://www.google.com/">
+                                                        <input type="checkbox" class="checkbox__input">
+                                                        <div class="checkbox__icon"><img class="checkbox__icon-img" src="assets/img/icons/check-mark--blue.png" alt=""></div>
+                                                        <span class="checkbox__desc"><span class="checkbox__txt">Замена троса сцепления</span></span>
+                                                    </label>
+
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </aside>
+
                 </div>
             </main>
 

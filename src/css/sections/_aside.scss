@@ -2,7 +2,7 @@
   $self: &;
   width: 14.58vw;
   border-bottom: 1px solid #E6E6E6;
-  float: left;
+  order: 0;
 
   @include mobile {
     display: none;

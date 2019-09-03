@@ -2,6 +2,10 @@
   $self: &;
   margin-bottom: vw(15px);
 
+  @include tablet {
+    display: none;
+  }
+
   @include mobile {
     display: none;
   }

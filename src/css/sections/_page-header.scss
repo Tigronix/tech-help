@@ -9,12 +9,51 @@
   z-index: 999;
   margin-bottom: vw(15px);
 
+  &.scrolled {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+  }
+
   @include mobile {
     padding: 0;
     background: #F79E1B;
     margin-bottom: 8px;
     position: relative;
     z-index: 1000;
+  }
+
+  &__search {
+    display: none;
+
+    #{$self}.scrolled & {
+      display: flex;
+      flex: 1;
+      margin: 0;
+      margin-right: vw(90px);
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .search {
+      &__submit {
+        background: #535E8A;
+        color: #fff;
+      }
+
+      &__input {
+        border: none;
+      }
+    }
+  }
+
+  &__navigation {
+    #{$self}.scrolled & {
+      display: none;
+    }
   }
 
   &__container {

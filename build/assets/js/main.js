@@ -153,6 +153,7 @@ var APP = {
 		var totalText = {};
 		var currentStep = 1;
 		var $form = $('.js-form-help');
+		var form = document.querySelector('.js-form-help');
 		var selectBrand = document.getElementById('brand');
 		var selectModel = document.getElementById('model');
 		var selectMalfunction = document.getElementById('malfunction');
@@ -163,139 +164,160 @@ var APP = {
 		var steps3 = document.querySelectorAll('.js-steps-3');
 		var btnNextStep = document.querySelector('.js-btn-next-step');
 		var btnSubmit = document.querySelector('.js-btn-submit');
+		var carsWrap = document.querySelector('.js-form-cars');
 
-		// utility functions
-		var formReset = function formReset() {
-			$form[0].reset();
-		};
+		$form.each(function () {
+			// utility functions
+			var formReset = function formReset() {
+				$form[0].reset();
+			};
 
-		var disableNextBtn = function disableNextBtn() {
-			btnNextStep.classList.add('disabled');
-		};
+			var disableNextBtn = function disableNextBtn() {
+				btnNextStep.classList.add('disabled');
+			};
 
-		var permitNextBtn = function permitNextBtn() {
-			btnNextStep.classList.remove('disabled');
-		};
+			var permitNextBtn = function permitNextBtn() {
+				btnNextStep.classList.remove('disabled');
+			};
 
-		var closeSteps = function closeSteps() {
-			var steps = document.querySelectorAll('.js-steps');
+			var closeSteps = function closeSteps() {
+				var steps = document.querySelectorAll('.js-steps');
 
-			steps.forEach(function (step) {
-				step.classList.add('hide');
-				step.classList.remove('active');
-			});
-		};
+				steps.forEach(function (step) {
+					step.classList.add('hide');
+					step.classList.remove('active');
+				});
+			};
 
-		var goToStep = function goToStep(steps) {
-			closeSteps();
+			var goToStep = function goToStep(steps) {
+				closeSteps();
 
-			steps.forEach(function (step) {
-				step.classList.add('active');
-				step.classList.remove('hide');
-			});
-		};
+				steps.forEach(function (step) {
+					step.classList.add('active');
+					step.classList.remove('hide');
+				});
+			};
 
-		var refreshOrderStatus = function refreshOrderStatus() {
-			infoSelectors.forEach(function (infoSelector) {
-				var textNodes = infoSelector.querySelectorAll('span');
+			var refreshOrderStatus = function refreshOrderStatus() {
+				infoSelectors.forEach(function (infoSelector) {
+					var textNodes = infoSelector.querySelectorAll('span');
 
-				textNodes.forEach(function (textNode) {
-					textNode.remove();
+					textNodes.forEach(function (textNode) {
+						textNode.remove();
+					});
+
+					infoSelector.insertAdjacentHTML('afterbegin', '<span>' + totalText.total + '</span>');
+				});
+			};
+
+			var resetModelSelect = function resetModelSelect(modelOptions) {
+				selectModel.selectedIndex = 0;
+
+				var selectModelWrap = selectModel.closest('.form-elem__wrap');
+				selectModelWrap.classList.remove('checked');
+			};
+
+			var closeOptions = function closeOptions(modelOptions) {
+				modelOptions.forEach(function (modelOption) {
+					modelOption.classList.add('hide');
+					modelOption.classList.remove('matched');
+				});
+			};
+
+			var openOptions = function openOptions(modelOption) {
+				modelOption.classList.remove('hide');
+				modelOption.classList.add('matched');
+			};
+
+			// listeners
+			formReset();
+
+			selectBrand.addEventListener('change', function () {
+				var brandValue = selectBrand.options[selectBrand.selectedIndex].value;
+				var brandText = selectBrand.options[selectBrand.selectedIndex].text;
+				var modelOptions = selectModel.querySelectorAll('option');
+				var selectWrap = selectBrand.closest('.form-elem__wrap');
+
+				totalText.brand = brandText;
+
+				selectWrap.classList.add('checked');
+
+				resetModelSelect(modelOptions);
+				closeOptions(modelOptions);
+
+				modelOptions.forEach(function (modelOption) {
+					var modelGroup = modelOption.getAttribute('data-group');
+					var isMatched = modelGroup === brandValue;
+
+					if (isMatched) {
+						openOptions(modelOption);
+					}
 				});
 
-				infoSelector.insertAdjacentHTML('afterbegin', '<span>' + totalText.total + '</span>');
+				disableNextBtn();
 			});
-		};
 
-		var resetModelSelect = function resetModelSelect(modelOptions) {
-			selectModel.selectedIndex = 0;
+			selectModel.addEventListener('change', function () {
+				var modelText = selectModel.options[selectModel.selectedIndex].text;
+				var selectWrap = selectModel.closest('.form-elem__wrap');
 
-			var selectModelWrap = selectModel.closest('.form-elem__wrap');
-			selectModelWrap.classList.remove('checked');
-		};
+				selectWrap.classList.add('checked');
+				totalText.model = modelText;
 
-		var closeOptions = function closeOptions(modelOptions) {
-			modelOptions.forEach(function (modelOption) {
-				modelOption.classList.add('hide');
-				modelOption.classList.remove('matched');
+				totalText.total = totalText.brand + ' ' + totalText.model;
+
+				refreshOrderStatus();
+				permitNextBtn();
 			});
-		};
 
-		var openOptions = function openOptions(modelOption) {
-			modelOption.classList.remove('hide');
-			modelOption.classList.add('matched');
-		};
+			selectMalfunction.addEventListener('change', function () {
+				var selectWrap = selectMalfunction.closest('.form-elem__wrap');
+				var malfunctionText = selectMalfunction.options[selectMalfunction.selectedIndex].text;
 
-		// listeners
-		formReset();
+				selectWrap.classList.add('checked');
 
-		selectBrand.addEventListener('change', function () {
-			var brandValue = selectBrand.options[selectBrand.selectedIndex].value;
-			var brandText = selectBrand.options[selectBrand.selectedIndex].text;
-			var modelOptions = selectModel.querySelectorAll('option');
-			var selectWrap = selectBrand.closest('.form-elem__wrap');
+				totalText.malfunction = malfunctionText;
 
-			totalText.brand = brandText;
+				totalText.total = totalText.brand + ' ' + totalText.model + ', ' + totalText.malfunction;
 
-			selectWrap.classList.add('checked');
+				refreshOrderStatus();
+			});
 
-			resetModelSelect(modelOptions);
-			closeOptions(modelOptions);
+			btnNextStep.addEventListener('click', function () {
+				closeSteps();
 
-			modelOptions.forEach(function (modelOption) {
-				var modelGroup = modelOption.getAttribute('data-group');
-				var isMatched = modelGroup === brandValue;
+				if (currentStep >= 2) {
+					this.classList.add('hide');
+					console.log(this);
 
-				if (isMatched) {
-					openOptions(modelOption);
+					currentStep = 2;
 				}
+
+				var nextStep = currentStep + 1;
+				var nextStepNodesStroke = '.js-steps-' + nextStep;
+				var nextStepNodes = document.querySelectorAll('.js-steps-' + nextStep);
+
+				currentStep++;
+
+				// car animation
+				form.classList.remove('step-1');
+				form.classList.remove('step-2');
+				form.classList.add('step-' + nextStep);
+
+				goToStep(nextStepNodes);
 			});
-
-			disableNextBtn();
 		});
+	};
 
-		selectModel.addEventListener('change', function () {
-			var modelText = selectModel.options[selectModel.selectedIndex].text;
-			var selectWrap = selectModel.closest('.form-elem__wrap');
+	var headerScroll = function headerScroll() {
+		var $header = $('.js-header');
 
-			selectWrap.classList.add('checked');
-			totalText.model = modelText;
-
-			totalText.total = totalText.brand + ' ' + totalText.model;
-
-			refreshOrderStatus();
-			permitNextBtn();
-		});
-
-		selectMalfunction.addEventListener('change', function () {
-			var selectWrap = selectMalfunction.closest('.form-elem__wrap');
-			var malfunctionText = selectMalfunction.options[selectMalfunction.selectedIndex].text;
-
-			selectWrap.classList.add('checked');
-
-			totalText.malfunction = malfunctionText;
-
-			totalText.total = totalText.brand + ' ' + totalText.model + ', ' + totalText.malfunction;
-
-			refreshOrderStatus();
-		});
-
-		btnNextStep.addEventListener('click', function () {
-			closeSteps();
-
-			if (currentStep >= 2) {
-				this.classList.add('hide');
-				console.log(this);
-
-				currentStep = 2;
+		$(window).on('scroll', function () {
+			if ($(this).scrollTop() > 50) {
+				$header.addClass('scrolled');
+			} else {
+				$header.removeClass('scrolled');
 			}
-
-			var nextStep = currentStep + 1;
-			var nextStepNodesStroke = '.js-steps-' + nextStep;
-			var nextStepNodes = document.querySelectorAll('.js-steps-' + nextStep);
-
-			currentStep++;
-			goToStep(nextStepNodes);
 		});
 	};
 
@@ -310,5 +332,6 @@ var APP = {
 	checkboxLink();
 	menu();
 	avtoSelect();
+	headerScroll();
 })();
 //# sourceMappingURL=main.js.map
