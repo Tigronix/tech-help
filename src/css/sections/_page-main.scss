@@ -8,7 +8,8 @@
   &__container {
     display: flex;
     flex-wrap: wrap;
-    
+    align-items: flex-start;
+
     &:after {
       display: block;
       content: '';
