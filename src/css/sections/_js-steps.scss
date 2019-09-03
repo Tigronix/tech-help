@@ -1,0 +1,16 @@
+
+
+.js-steps-2,
+.js-steps-3 {
+  display: none;
+}
+
+.js-steps {
+  &.hide {
+    display: none;
+  }
+
+  &.active {
+    display: block;
+  }
+}

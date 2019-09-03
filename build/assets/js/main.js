@@ -150,24 +150,68 @@ var APP = {
 	};
 
 	var avtoSelect = function avtoSelect() {
+		var totalText = {};
+		var currentStep = 1;
+		var $form = $('.js-form-help');
 		var selectBrand = document.getElementById('brand');
 		var selectModel = document.getElementById('model');
-		var totalText = {};
-		var infoSelecor = document.querySelector('.js-total-text');
+		var selectMalfunction = document.getElementById('malfunction');
+		var infoSelectors = document.querySelectorAll('.js-total-text');
+		var steps = document.querySelectorAll('.js-steps');
+		var steps1 = document.querySelectorAll('.js-steps-1');
+		var steps2 = document.querySelectorAll('.js-steps-2');
+		var steps3 = document.querySelectorAll('.js-steps-3');
+		var btnNextStep = document.querySelector('.js-btn-next-step');
+		var btnSubmit = document.querySelector('.js-btn-submit');
+
+		// utility functions
+		var formReset = function formReset() {
+			$form[0].reset();
+		};
+
+		var disableNextBtn = function disableNextBtn() {
+			btnNextStep.classList.add('disabled');
+		};
+
+		var permitNextBtn = function permitNextBtn() {
+			btnNextStep.classList.remove('disabled');
+		};
+
+		var closeSteps = function closeSteps() {
+			var steps = document.querySelectorAll('.js-steps');
+
+			steps.forEach(function (step) {
+				step.classList.add('hide');
+				step.classList.remove('active');
+			});
+		};
+
+		var goToStep = function goToStep(steps) {
+			closeSteps();
+
+			steps.forEach(function (step) {
+				step.classList.add('active');
+				step.classList.remove('hide');
+			});
+		};
 
 		var refreshOrderStatus = function refreshOrderStatus() {
-			var textNodes = infoSelecor.querySelectorAll('span');
+			infoSelectors.forEach(function (infoSelector) {
+				var textNodes = infoSelector.querySelectorAll('span');
 
-			textNodes.forEach(function (textNode) {
-				textNode.remove();
+				textNodes.forEach(function (textNode) {
+					textNode.remove();
+				});
+
+				infoSelector.insertAdjacentHTML('afterbegin', '<span>' + totalText.total + '</span>');
 			});
-
-			infoSelecor.insertAdjacentHTML('afterbegin', '<span>' + totalText.total + '</span>');
 		};
 
 		var resetModelSelect = function resetModelSelect(modelOptions) {
 			selectModel.selectedIndex = 0;
-			selectModel.classList.remove('checked');
+
+			var selectModelWrap = selectModel.closest('.form-elem__wrap');
+			selectModelWrap.classList.remove('checked');
 		};
 
 		var closeOptions = function closeOptions(modelOptions) {
@@ -181,6 +225,9 @@ var APP = {
 			modelOption.classList.remove('hide');
 			modelOption.classList.add('matched');
 		};
+
+		// listeners
+		formReset();
 
 		selectBrand.addEventListener('change', function () {
 			var brandValue = selectBrand.options[selectBrand.selectedIndex].value;
@@ -203,18 +250,52 @@ var APP = {
 					openOptions(modelOption);
 				}
 			});
+
+			disableNextBtn();
 		});
 
 		selectModel.addEventListener('change', function () {
 			var modelText = selectModel.options[selectModel.selectedIndex].text;
-			// const selectWrap = selectModel.closest('.se')
+			var selectWrap = selectModel.closest('.form-elem__wrap');
 
-			selectModel.classList.add('checked');
+			selectWrap.classList.add('checked');
 			totalText.model = modelText;
 
 			totalText.total = totalText.brand + ' ' + totalText.model;
 
 			refreshOrderStatus();
+			permitNextBtn();
+		});
+
+		selectMalfunction.addEventListener('change', function () {
+			var selectWrap = selectMalfunction.closest('.form-elem__wrap');
+			var malfunctionText = selectMalfunction.options[selectMalfunction.selectedIndex].text;
+
+			selectWrap.classList.add('checked');
+
+			totalText.malfunction = malfunctionText;
+
+			totalText.total = totalText.brand + ' ' + totalText.model + ', ' + totalText.malfunction;
+
+			refreshOrderStatus();
+		});
+
+		btnNextStep.addEventListener('click', function () {
+			closeSteps();
+
+			if (currentStep >= 2) {
+				this.classList.add('hide');
+				console.log(this);
+
+				currentStep = 2;
+			}
+
+			var nextStep = currentStep + 1;
+			var nextStepNodesStroke = '.js-steps-' + nextStep;
+			var nextStepNodes = document.querySelectorAll('.js-steps-' + nextStep);
+
+			currentStep++;
+			goToStep(nextStepNodes);
 		});
 	};
 

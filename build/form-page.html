@@ -466,15 +466,19 @@
                                     <div class="form-help__info">
                                         <div class="form-help__header">
                                             <span class="form-help__header-txt">
-						<span class="form-help__steps js-steps-1">КАКОЙ У ВАС АВТОМОБИЛЬ?</span>
-                                            <span class="form-help__steps js-steps-2">ЧТО НУЖНО СДЕЛАТЬ?</span>
-                                            <span class="form-help__steps js-steps-3">ВАШИ КОНТАКТЫ:</span>
+						<span class="form-help__steps js-steps js-steps-1">КАКОЙ У ВАС АВТОМОБИЛЬ?</span>
+                                            <span class="form-help__steps js-steps js-steps-2">ЧТО НУЖНО СДЕЛАТЬ?</span>
+                                            <span class="form-help__steps js-steps js-steps-3">ВАШИ КОНТАКТЫ:</span>
                                             </span>
                                         </div>
-                                        <div class="form-help__desc">Выберите марку и модель вашего автомобиля</div>
+                                        <div class="form-help__desc">
+                                            <span class="form-help__steps js-steps js-steps-1">Выберите неисправность автомобиля</span>
+                                            <span class="form-help__steps js-steps js-steps-2">Выберите неисправность автомобиля</span>
+                                            <span class="form-help__steps js-steps js-steps-3">Ваше имя и номер телефона, оставьте комментарий</span>
+                                        </div>
                                     </div>
                                     <ul class="form-help__form-list">
-                                        <li class="form-help__form-li form-help__form-li--50 js-steps-1">
+                                        <li class="form-help__form-li form-help__form-li--50 js-steps js-steps-1">
                                             <div class="form-elem__select-wrap form-elem__wrap js-select-wrap form-elem--avto form-elem--brand">
                                                 <select class="form-elem form-elem--select js-select " id="brand">
 
@@ -490,7 +494,7 @@
                                             </div>
 
                                         </li>
-                                        <li class="form-help__form-li form-help__form-li--50 js-steps-1">
+                                        <li class="form-help__form-li form-help__form-li--50 js-steps js-steps-1">
                                             <div class="form-elem__select-wrap form-elem__wrap js-select-wrap form-elem--avto form-elem--model">
                                                 <select class="form-elem form-elem--select js-select disabled" id="model">
 
@@ -518,7 +522,8 @@
                                             </div>
 
                                         </li>
-                                        <li class="form-help__form-li js-steps-2">
+                                        <li class="form-help__form-li js-steps js-steps-2">
+                                            <div class="js-steps js-steps-2 js-total-text"></div>
                                             <div class="form-elem__select-wrap form-elem__wrap js-select-wrap form-elem--avto form-elem--malfunction">
                                                 <select class="form-elem form-elem--select js-select " id="malfunction">
 
@@ -534,30 +539,63 @@
                                             </div>
 
                                         </li>
-                                        <li class="form-help__form-li form-help__li--50">
+                                        <li class="form-help__form-li form-help__form-li--50 js-steps js-steps-3">
                                             <div class="form-elem__wrap">
-                                                <input placeholder="Имя" type="text" class="form-elem form-elem--avto ">
+                                                <input placeholder="Имя" type="text" class="form-elem form-elem--avto " required>
                                             </div>
 
                                         </li>
-                                        <li class="form-help__form-li form-help__li--50">
+                                        <li class="form-help__form-li form-help__form-li--50 js-steps js-steps-3">
                                             <div class="form-elem__wrap">
-                                                <input placeholder="Телефон для связи" type="phone" class="form-elem form-elem--avto ">
+                                                <input placeholder="Телефон для связи" type="phone" class="form-elem form-elem--avto form-elem--phone " required>
                                             </div>
 
                                         </li>
-                                        <li class="form-help__form-li">
+                                        <li class="form-help__form-li js-steps js-steps-3">
                                             <div class="form-elem__wrap">
                                                 <textarea placeholder="Комментарий" class="form-elem form-elem--textarea form-elem--avto"></textarea>
                                             </div>
 
+                                            <div class="js-steps js-steps-3 js-total-text"></div>
                                         </li>
                                     </ul>
-                                    <div class="js-total-text"></div>
-                                    <button type="button" class="btn form-help__submit disabled">Продолжить</button>
+                                    <button type="button" class="btn form-help__submit js-btn-next-step disabled">Продолжить</button>
+                                    <div class="form-help__submit-wrap js-steps js-steps-3">
+                                        <button type="submit" class="btn form-help__submit js-btn-submit">Отправить заявку</button>
+                                        <label class="form-help__checkbox">
+                                            <input type="checkbox" class="form-help__checkbox-input" checked="checked">
+                                            <span class="form-help__checkbox-icon"></span>
+                                            <span class="form-help__checkbox-desc">Я согласен на обработку персональных данных</span>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="form-help__cars">
+                                <div class="form-help-cars__item"><img src="assets/img/taxi.png" alt="" class="form-help__success-img"></div>
+                                <div class="form-help-cars__item"><img src="assets/img/car-repair.png" alt="" class="form-help__success-img"></div>
+                            </div>
                         </form>
+
+                        <div class="form-help__success">
+                            <div class="form-help__container">
+                                <img src="assets/img/sellout-guy.png" alt="" class="form-help__success-man">
+                                <div class="form-help__success-content">
+                                    <div class="form-help__header">
+                                        <span class="form-help__header-txt">
+					СПАСИБО ЗА ЗАЯВКУ!
+				</span>
+                                    </div>
+                                    <div class="form-help__desc">Автомеханик свяжется с вами в течении 2 минут</div>
+                                    <div class="form-help__success-cars">
+                                        <div class="form-help__success-car"></div>
+                                        <div class="form-help__success-car"></div>
+                                        <img src="assets/img/taxi.png" alt="" class="form-help__success-img">
+                                        <img src="assets/img/car-repair.png" alt="" class="form-help__success-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
